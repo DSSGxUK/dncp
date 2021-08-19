@@ -1,0 +1,1 @@
+initialize folder structure according to cookie cutter

@@ -1,0 +1,52 @@
+# ------------------------------------------------------------------------------
+# DATA
+# ------------------------------------------------------------------------------
+
+data:
+    loc: "data/raw/" # loc is input path
+    dest: 'data/output/' # dest is output path
+    input_data:
+        # listed in order of joining
+        item_solicitado: 'item_solicitado.csv'
+        llamado_grupo: 'llamado_grupo.csv'
+        llamado: 'llamado.csv'
+        pac: 'pac.csv'
+        producto_n5: 'producto_n5.csv'
+        producto_n4: 'producto_n4.csv'
+        producto_n3: 'producto_n3.csv'
+        producto_n2: 'producto_n2.csv'
+        producto_n1: 'producto_n1.csv'
+        unidad_contratacion: 'unidad_contratacion.csv'
+        entidad: 'entidad.csv'
+        nivel_entidad: 'nivel_entidad.csv'
+
+# ------------------------------------------------------------------------------
+# FEATURES AND FEATURE ENGINEERING
+# ------------------------------------------------------------------------------
+
+features:
+    id: 'item_solicitado_id' # unique id
+    # variables that were one-hot encoded (see fe_conf.yaml)
+    one_hot_encoded_vars:
+        ['tipo_unidad_contratacion',
+         'nombre_nivel_entidad',
+         'forma_adjudicacion_llamado',
+         'forma_pago_llamado',
+         'descripcion_ingles_producto_n1']
+    log_transforms:
+    extra_vars: ['item_solicitado_id',
+			'descripcion_item_solicitado',
+			'descripcion_llamado_grupo',
+			'descripcion_llamado',
+			'fecha_ejecucion_pac']
+
+# ------------------------------------------------------------------------------
+# MODELS
+# ------------------------------------------------------------------------------
+
+model:
+    loc: "data/output/" # loc is input path
+    winning_model: "xgboost_2021-08-13.rds" # loc is input path
+ohe_model:
+    loc: "data/output/"
+    last_run_date: "2021-08-13"

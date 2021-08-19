@@ -1,0 +1,199 @@
+---
+title: "DNCP Exploratory Data Analysis on Training Dataset"
+author: |
+  | Beck DeYoung, Maria-Cristiana Girjau, Dushant Gohri, Ethan Lee
+  | (PI: Robert Hager)
+date: "`r format(Sys.Date(), format = '%d %B %Y')`"
+output: pdf_document
+toc: true
+toc_depth: 2
+---
+
+```{r setup, include=FALSE}
+library(moments)
+library(readxl)
+library(scales)
+library(tidyverse)
+library(wesanderson)
+library(yaml)
+
+theme_set(theme_bw())
+
+knitr::opts_chunk$set(
+  echo = FALSE,
+  comment = NA,
+  warning = FALSE,
+  message = FALSE
+)
+
+setwd("..") # always keep root project directory as the working directory
+
+conf <- yaml.load_file("conf/eda_conf.yaml")
+
+file <- paste0(conf$data$loc, "eda-temp.rds")
+
+train <- readRDS(file)
+
+meta <- paste0("conf/meta/", conf$meta) |>
+  read_excel(sheet = 1) |>
+  filter(if_any(everything(), ~!is.na(.x))) |>
+  filter(use == "Y")
+
+num <- filter(meta, type == "num")$name
+cat <- filter(meta, type == "cat")$name
+
+more_than_one_num <- length(num) > 1
+```
+
+\newpage
+# Introduction
+
+This is an automated exploratory data analysis of the variables in the training set (both targets and predictors). Summary statistics and distribution plots are offered for the numerical variables, while for categorical variables some bar plots are produced.
+
+\newpage
+# Numerical Variables
+
+## Summary Statistics
+
+```{r}
+stats <- lapply(num, function(n) {
+  data.frame(
+    "min"         = min(train[[n]], na.rm = TRUE),
+    "q1"          = quantile(train[[n]], 0.25, na.rm = TRUE),
+    "mean"        = mean(train[[n]], na.rm = TRUE),
+    "median"      = median(train[[n]], na.rm = TRUE),
+    "q3"          = quantile(train[[n]], 0.75, na.rm = TRUE),
+    "max"         = max(train[[n]], na.rm = TRUE),
+    "missing_val" = paste0(round(100 * mean(is.na(train[[n]])), 2), "%")
+  )
+}) |> 
+  data.table::rbindlist() |>
+  rowwise() |> 
+  mutate(across(!last_col(), function(x) {
+    if (abs(x) > 10^9) {
+      paste0(round(x / 10^9, 2), "B")
+    } else if (abs(x) > 10^6) {
+      paste0(round(x / 10^6, 2), "M")
+    } else if (abs(x) > 10^3) {
+      paste0(round(x / 10^3, 2), "K")
+    } else {
+      paste0(round(x, 2))
+    }
+  }))
+
+row.names(stats) <- str_to_title(str_replace_all(num, "_", " "))
+
+stats_names <- c("Min", "1st Q", "Mean", "Median", "3rd Q", "Max", "% Missing Val")
+
+knitr::kable(stats, digits = 2, linesep = "", col.names = stats_names, align = "r")
+```
+
+## Distribution Plots
+
+```{r, fig.width=10, fig.height=3}
+hues <- wes_palette("GrandBudapest2", n = length(num), type = "continuous")
+
+map2(num, hues, function(n, hue) {
+  skewed <- skewness(train[[n]], na.rm = TRUE) > 5
+  n_label <- str_to_title(str_replace_all(n, "_", " "))
+  density_plot <- ggplot(train, aes_string(x = n)) +
+    geom_density(alpha = 0.5, fill = hue) +
+    {if (skewed) scale_x_log10(labels = scales::label_number_si())
+      else scale_x_continuous(labels = scales::label_number_si())} +
+    labs(x = ifelse(skewed, paste(n_label, "(log)"), n_label), y = "Density",
+         title = paste("Density Plot of", n_label))
+  histogram <- ggplot(train, aes_string(x = n)) +
+    geom_histogram(alpha = 0.5, fill = hue, color = "black") +
+    {if (skewed) scale_x_log10(labels = scales::label_number_si())
+      else scale_x_continuous(labels = scales::label_number_si())} +
+    scale_y_continuous(labels = scales::label_number_si()) +
+    labs(x = ifelse(skewed, paste(n_label, "(log)"), n_label), y = "Count",
+         title = paste("Histogram of", n_label))
+  print(cowplot::plot_grid(density_plot, histogram))
+}) |>
+  invisible()
+```
+
+## Boxplots
+
+```{r, fig.width=9, fig.height=3}
+map2(num, hues, function(n, hue) {
+  skewed <- skewness(train[[n]], na.rm = TRUE) > 5
+  n_label <- str_to_title(str_replace_all(n, "_", " "))
+  boxplot <- ggplot(train, aes_string(x = n)) +
+    geom_boxplot(alpha = 0.5, fill = hue) + 
+    labs(x = ifelse(skewed, paste(n_label, "(log)"), n_label), y = "",
+         title = paste("Boxplot of", n_label)) +
+    {if (skewed) scale_x_log10(labels = scales::label_number_si())
+      else scale_x_continuous(labels = scales::label_number_si())} +
+    theme(axis.text.y = element_blank(), axis.ticks.y = element_blank())
+  print(boxplot)
+}) |> 
+  invisible()
+```
+
+`r if (more_than_one_num) {"## Correlation Plots"}`
+
+```{r, fig.width=12, fig.height=12}
+# only show correlation plots if there is more than one numeric variable
+if (more_than_one_num) {
+  
+  combos <- expand_grid(num1 = num, num2 = num)
+  
+  plots <- map2(combos$num1, combos$num2, function(n1, n2) {
+    skewed1 <- skewness(train[[n1]], na.rm = TRUE) > 5
+    skewed2 <- skewness(train[[n2]], na.rm = TRUE) > 5
+    n1_label <- str_to_title(str_replace_all(n1, "_", " "))
+    n2_label <- str_to_title(str_replace_all(n2, "_", " "))
+    corr <- round(cor(train[[n1]], train[[n2]], use = "complete"), 2)
+    train |> 
+      sample_n(200) |> 
+      ggplot(aes_string(x = n1, y = n2)) +
+      geom_point(color = sample(hues, 1)) +
+      {if (skewed1) scale_x_log10(labels = scales::label_number_si())
+        else scale_x_continuous(labels = scales::label_number_si())} +
+      {if (skewed2) scale_y_log10(labels = scales::label_number_si())
+        else scale_y_continuous(labels = scales::label_number_si())} +
+      labs(x = ifelse(skewed1, paste(n1_label, "(log)"), n1_label),
+           y = ifelse(skewed2, paste(n2_label, "(log)"), n2_label),
+           title = paste0("Correlation: ", corr))
+  })
+  
+  cowplot::plot_grid(plotlist = plots, nrow = length(num),
+                     ncol = length(num), byrow = FALSE)
+}
+```
+
+\newpage
+# Categorical Variables
+
+```{r}
+# change NA to "Missing" for categorical variables
+train <- train |>
+  mutate(
+    across(all_of(cat), ~ifelse(is.na(.x), "Missing", as.character(.x))),
+    across(all_of(cat), ~forcats::fct_infreq(factor(.x))),
+    across(all_of(cat), ~forcats::fct_relevel(.x, "Missing", after = Inf))
+  )
+```
+
+## Barplots
+
+```{r, fig.width=8, fig.height=5}
+map(cat, function(c) {
+  n_levels <- length(unique(train[[c]]))
+  hues <- wes_palette("GrandBudapest2", n = n_levels, type = "continuous")
+  c_label <- str_to_title(str_replace_all(c, "_", " "))
+  barplot <- ggplot(train, aes_string(x = c, fill = c)) +
+    geom_bar() + 
+    geom_label(aes(label = ..count..), stat = "count", size = 2, fill = "white") +
+    labs(x = c_label, y = "Count", fill = c_label,
+         title = paste("Barplot of", c_label)) +
+    scale_fill_manual(values = hues) +
+    scale_y_continuous(labels = scales::label_number_si()) +
+    theme(legend.position = "none",
+          axis.text.x = element_text(angle = ifelse(n_levels > 5, 90, 0)))
+  print(barplot)
+}) |> 
+  invisible()
+```

@@ -1,0 +1,12 @@
+*.csv
+*.Rds
+*.Rdata
+*.Rhistory
+*.rds
+.Rproj.user/
+*.Rproj
+*_cache/
+*_files/
+*.log
+*.tex
+*.~lock.*

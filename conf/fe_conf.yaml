@@ -1,0 +1,137 @@
+# ------------------------------------------------------------------------------
+# DATA
+# ------------------------------------------------------------------------------
+
+data:
+    # loc: '../../data/raw/'
+    loc: "/files/data/" # loc is input path
+    dest: '~/dncp/data/output/' # dest is output path
+    input_data:
+        # listed in order of joining
+        item_solicitado: 'item_solicitado.csv'
+        llamado_grupo: 'llamado_grupo.csv'
+        llamado: 'llamado.csv'
+        pac: 'pac.csv'
+        producto_n5: 'producto_n5.csv'
+        producto_n4: 'producto_n4.csv'
+        producto_n3: 'producto_n3.csv'
+        producto_n2: 'producto_n2.csv'
+        producto_n1: 'producto_n1.csv'
+        unidad_contratacion: 'unidad_contratacion.csv'
+        entidad: 'entidad.csv'
+        nivel_entidad: 'nivel_entidad.csv'
+        
+# ------------------------------------------------------------------------------
+# FEATURES
+# ------------------------------------------------------------------------------
+
+features:
+    # of the form 'variable_dataset'
+    id: 'item_solicitado_id' # unique id
+    # (log-transformed suffix '_log' will be added automatically if applicable)
+    target: 'precio_unitario_item_solicitado'
+    # predictors that appear in the original datasets (of the form 'variable_dataset'),
+    # as well as other simple predictors like the goods/services indicator 'service'
+    predictors:
+        ['tipo_unidad_contratacion',
+         'institucion_unidad_contratacion',
+         'nombre_nivel_entidad',
+         'forma_adjudicacion_llamado',
+         'forma_pago_llamado',
+         'contrato_abierto_llamado_grupo',
+         'agricultura_familiar_item_solicitado',
+         'produccion_nacional_item_solicitado',
+         'service',
+         'descripcion_ingles_producto_n1',
+         'cantidad_item_solicitado']
+    # group-based predictors
+    groups:
+        buyer:
+            use: true
+            names:
+                ['police_buyer',
+                 'hospital_buyer',
+                 'health_buyer',
+                 'law_buyer',
+                 'ministry_buyer',
+                 'education_buyer',
+                 'army_buyer',
+                 'tech_buyer',
+                 'electricity_buyer']
+        context:
+            use: true
+            names:
+                ['food_context',
+                 'vehicle_context',
+                 'construction_context',
+                 'hardware_context',
+                 'preventive_corrective_context',
+                 'real_estate_context',
+                 'office_context',
+                 'specialized_supplies_context',
+                 'cleaning_context',
+                 'politics_context',
+                 'medical_context',
+                 'chemical_context',
+                 'insurance_context',
+                 'specific_brand_context',
+                 'electricity_context',
+                 'kitchen_context',
+                 'computer_context',
+                 'air_conditioning_context',
+                 'spare_part_context',
+                 'machine_context',
+                 'fuel_context']
+
+# ------------------------------------------------------------------------------
+# FEATURE ENGINEERING
+# ------------------------------------------------------------------------------
+
+fe:
+    currency:
+        loc: "/files/data/"
+        file: "cotizacion.csv"
+    inflation:
+        loc: "/files/data/"
+        file: "ipc.csv"
+        base_year: 2021
+        base_month: 6
+    one_hot_encode:
+        # variables to one-hot encode
+        ['tipo_unidad_contratacion',
+         'nombre_nivel_entidad',
+         'forma_adjudicacion_llamado',
+         'forma_pago_llamado',
+         'descripcion_ingles_producto_n1']
+    filter:
+        # add as many dplyr::filter conditions as desired, for example:
+        #   condition_1: 'descripcion_ingles_producto_n2 == "Fuels"'
+        #   condition_2: 'precio_unitario_item_solicitado > 10000'
+        #   condition_3: 'year(fecha_publicacion_llamado) => 2015'
+        condition_1: 'contrato_abierto_llamado_grupo == FALSE'
+        condition_2: 'service == FALSE' # only goods
+        condition_3: 'nombre_entidad != "Petróleos Paraguayos"'
+        condition_4: 'precio_unitario_item_solicitado != 0'
+    log_transform: 
+        ['precio_unitario_item_solicitado']
+    merge_sparse_categories:
+        threshold: 0.01
+        variables:
+            ['forma_pago_llamado',
+             'nombre_nivel_entidad',
+             'descripcion_ingles_producto_n1']
+    outlier_detection:
+        # run anomaly detection on the target variable to remove any outliers?
+        # (set to true when constructing training dataset, set to false when
+        # pre-processing new data)
+        remove_outliers: true
+        # a number between 0 and 1; the closer the anomaly score is to 1, the
+        # more likely it is that the observation is an outlier
+        anomaly_score_cutoff: 0.6
+
+# ------------------------------------------------------------------------------
+# METADATA
+# ------------------------------------------------------------------------------
+
+meta:
+    eda: 'conf_meta_training_set_data_dict_v02.xlsx'

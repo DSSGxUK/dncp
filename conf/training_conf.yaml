@@ -1,0 +1,129 @@
+# ------------------------------------------------------------------------------
+# DATA
+# ------------------------------------------------------------------------------
+
+data:
+    loc: 'data/output/'
+    last_run_date: '2021-08-09'
+
+# ------------------------------------------------------------------------------
+# FEATURES
+# ------------------------------------------------------------------------------
+
+features:
+    id: 'item_solicitado_id' # unique id
+    target: 'precio_unitario_item_solicitado_log'
+    # all predictors to be used, including groups and one-hot encoded variables
+    predictors:
+        ['tipo_unidad_contratacion',
+         'institucion_unidad_contratacion',
+         'nombre_nivel_entidad',
+         'forma_adjudicacion_llamado',
+         'forma_pago_llamado',
+         'contrato_abierto_llamado_grupo',
+         'agricultura_familiar_item_solicitado',
+         'produccion_nacional_item_solicitado',
+         'service',
+         'descripcion_ingles_producto_n1',
+         'cantidad_item_solicitado',
+         'police_buyer',
+         'hospital_buyer',
+         'health_buyer',
+         'law_buyer',
+         'ministry_buyer',
+         'education_buyer',
+         'army_buyer',
+         'tech_buyer',
+         'electricity_buyer',
+         'food_context',
+         'vehicle_context',
+         'construction_context',
+         'hardware_context',
+         'preventive_corrective_context',
+         'furniture_context',
+         'office_context',
+         'specialized_supplies_context',
+         'cleaning_context',
+         'politics_context',
+         'medical_context',
+         'chemical_context',
+         'insurance_context',
+         'specific_brand_context',
+         'electricity_context',
+         'kitchen_context',
+         'computer_context',
+         'air_conditioning_context',
+         'spare_part_context',
+         'machine_context']
+    # variables that were one-hot encoded (see fe_conf.yaml)
+    one_hot_encoded_vars:
+        ['tipo_unidad_contratacion',
+         'nombre_nivel_entidad',
+         'forma_adjudicacion_llamado',
+         'forma_pago_llamado',
+         'descripcion_ingles_producto_n1']
+
+# ------------------------------------------------------------------------------
+# MODEL
+# ------------------------------------------------------------------------------
+
+model:
+    name: 'lm_test'
+    train_prop: 0.8
+    # type can be e.g. 'regr.ranger' for random forest, 'regr.xgboost' for xgboost, etc.
+    type: 'regr.xgboost'
+    parameters:
+        # for a given model type, use lrn(model_type)$param_set to find which
+        # parameters can be customized, then input the ones you want to change
+        # as key-value pairs, for example (for a random forest):
+        #   num.trees: 1501
+        #   mtry: 20
+        verbose: 1
+        nthread: 6
+        early_stopping_rounds: 30
+        eta: 0.179236
+        max_depth: 112
+        colsample_bytree: 0.6994112
+        nrounds: 274
+        subsample: 0.8822451
+        min_child_weight: 1.192224
+        # gamma: 1.011394
+    hyperparameter_tuning:
+        run: false
+        tuner: 'random_search'
+        n_evals: 20
+        parameters:
+            eta:
+                type: 'dbl'
+                lower: 0
+                upper: 1
+            max_depth:
+                type: 'int'
+                lower: 1
+                upper: 100
+            subsample:
+                type: 'dbl'
+                lower: 0
+                upper: 1
+            colsample_bytree:
+                type: 'dbl'
+                lower: 0
+                upper: 1
+            min_child_weight:
+                type: 'dbl'
+                lower: 0
+                upper: 5
+            gamma:
+                type: 'dbl'
+                lower: 0
+                upper: 3
+            nrounds:
+                type: 'int'
+                lower: 40
+                upper: 400
+    pyg_to_usd: 0.00015 # from cotizacion table
+    metrics:
+        # KPIs to be logged in mlflow for model evaluation
+        ['regr.rmse',
+         'regr.mae',
+         'regr.rsq']
