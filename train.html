@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>7 Training | DNCP Project Documentation</title>
+  <meta name="description" content="This is the documentation for the DNCP Project of the Summer 2021 DSSGx Fellowship at the University of Warwick and LMU." />
+  <meta name="generator" content="bookdown 0.23 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="7 Training | DNCP Project Documentation" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is the documentation for the DNCP Project of the Summer 2021 DSSGx Fellowship at the University of Warwick and LMU." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="7 Training | DNCP Project Documentation" />
+  
+  <meta name="twitter:description" content="This is the documentation for the DNCP Project of the Summer 2021 DSSGx Fellowship at the University of Warwick and LMU." />
+  
+
+
+
+<meta name="date" content="2021-08-23" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="eda.html"/>
+<link rel="next" href="predict.html"/>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">DNCP Documentation</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="fe.html"><a href="fe.html"><i class="fa fa-check"></i><b>2</b> Feature Engineering</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="fe.html"><a href="fe.html#fe-script"><i class="fa fa-check"></i><b>2.1</b> The Script</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="fe.html"><a href="fe.html#fe-script-required-files"><i class="fa fa-check"></i><b>2.1.1</b> Required Files</a></li>
+<li class="chapter" data-level="2.1.2" data-path="fe.html"><a href="fe.html#fe-script-required-r-packages"><i class="fa fa-check"></i><b>2.1.2</b> Required R Packages</a></li>
+<li class="chapter" data-level="2.1.3" data-path="fe.html"><a href="fe.html#fe-script-tasks-performed"><i class="fa fa-check"></i><b>2.1.3</b> Tasks Performed</a></li>
+<li class="chapter" data-level="2.1.4" data-path="fe.html"><a href="fe.html#fe-script-outputs"><i class="fa fa-check"></i><b>2.1.4</b> Outputs</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="fe.html"><a href="fe.html#fe-conf"><i class="fa fa-check"></i><b>2.2</b> The Configuration File</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="fe.html"><a href="fe.html#fe-conf-data-load"><i class="fa fa-check"></i><b>2.2.1</b> Loading in Data</a></li>
+<li class="chapter" data-level="2.2.2" data-path="fe.html"><a href="fe.html#features"><i class="fa fa-check"></i><b>2.2.2</b> Features</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="buyer.html"><a href="buyer.html"><i class="fa fa-check"></i><b>3</b> Buyer Groupings</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="buyer.html"><a href="buyer.html#buyer-information-fields"><i class="fa fa-check"></i><b>3.1</b> Buyer Information Fields</a></li>
+<li class="chapter" data-level="3.2" data-path="buyer.html"><a href="buyer.html#buyer-add-info-to-tenders"><i class="fa fa-check"></i><b>3.2</b> Adding Buyer Information to Tenders</a></li>
+<li class="chapter" data-level="3.3" data-path="buyer.html"><a href="buyer.html#buyer-level"><i class="fa fa-check"></i><b>3.3</b> Buyer Levels</a></li>
+<li class="chapter" data-level="3.4" data-path="buyer.html"><a href="buyer.html#buyer-name-description"><i class="fa fa-check"></i><b>3.4</b> Buyer Names and Descriptions</a></li>
+<li class="chapter" data-level="3.5" data-path="buyer.html"><a href="buyer.html#buyer-frequent-words"><i class="fa fa-check"></i><b>3.5</b> Most Frequent Words</a></li>
+<li class="chapter" data-level="3.6" data-path="buyer.html"><a href="buyer.html#buyer-groupings"><i class="fa fa-check"></i><b>3.6</b> Final Buyer Groupings</a></li>
+<li class="chapter" data-level="3.7" data-path="buyer.html"><a href="buyer.html#buyer-variable-importance"><i class="fa fa-check"></i><b>3.7</b> Variable Importance Exploration</a></li>
+<li class="chapter" data-level="3.8" data-path="buyer.html"><a href="buyer.html#buyer-conclusions"><i class="fa fa-check"></i><b>3.8</b> Implementation Conclusions</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="context.html"><a href="context.html"><i class="fa fa-check"></i><b>4</b> Context Groupings</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="context.html"><a href="context.html#context-information-fields"><i class="fa fa-check"></i><b>4.1</b> Context Information Fields</a></li>
+<li class="chapter" data-level="4.2" data-path="context.html"><a href="context.html#context-frequent-words"><i class="fa fa-check"></i><b>4.2</b> Most Frequent Words</a></li>
+<li class="chapter" data-level="4.3" data-path="context.html"><a href="context.html#context-word-assoc"><i class="fa fa-check"></i><b>4.3</b> Most Frequent Word Associations</a></li>
+<li class="chapter" data-level="4.4" data-path="context.html"><a href="context.html#context-word-regression"><i class="fa fa-check"></i><b>4.4</b> Most Influential Words</a></li>
+<li class="chapter" data-level="4.5" data-path="context.html"><a href="context.html#context-groupings"><i class="fa fa-check"></i><b>4.5</b> Final Context Groupings</a></li>
+<li class="chapter" data-level="4.6" data-path="context.html"><a href="context.html#context-conclusions"><i class="fa fa-check"></i><b>4.6</b> Implementation Conclusions</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="outlier.html"><a href="outlier.html"><i class="fa fa-check"></i><b>5</b> Outlier Removal</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="outlier.html"><a href="outlier.html#outlier-anomaly-scores"><i class="fa fa-check"></i><b>5.1</b> Anomaly Scores</a></li>
+<li class="chapter" data-level="5.2" data-path="outlier.html"><a href="outlier.html#outlier-statistics"><i class="fa fa-check"></i><b>5.2</b> Outlier Statistics</a></li>
+<li class="chapter" data-level="5.3" data-path="outlier.html"><a href="outlier.html#outlier-descriptions"><i class="fa fa-check"></i><b>5.3</b> Outlier Descriptions</a></li>
+<li class="chapter" data-level="5.4" data-path="outlier.html"><a href="outlier.html#outlier-conclusions"><i class="fa fa-check"></i><b>5.4</b> Implementation Conclusions</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="eda.html"><a href="eda.html"><i class="fa fa-check"></i><b>6</b> Exploratory Data Analysis</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="eda.html"><a href="eda.html#eda-pdf"><i class="fa fa-check"></i><b>6.1</b> The PDF File</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="eda.html"><a href="eda.html#eda-pdf-types"><i class="fa fa-check"></i><b>6.1.1</b> Types of EDA Performed</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="eda.html"><a href="eda.html#eda-data-dictionary"><i class="fa fa-check"></i><b>6.2</b> The Data Dictionary</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="train.html"><a href="train.html"><i class="fa fa-check"></i><b>7</b> Training</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="train.html"><a href="train.html#train-script"><i class="fa fa-check"></i><b>7.1</b> The Script</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="train.html"><a href="train.html#train-script-files"><i class="fa fa-check"></i><b>7.1.1</b> Required Files</a></li>
+<li class="chapter" data-level="7.1.2" data-path="train.html"><a href="train.html#train-script-required-r-packages"><i class="fa fa-check"></i><b>7.1.2</b> Required R Packages</a></li>
+<li class="chapter" data-level="7.1.3" data-path="train.html"><a href="train.html#train-script-tasks"><i class="fa fa-check"></i><b>7.1.3</b> Tasks Performed by the Script</a></li>
+<li class="chapter" data-level="7.1.4" data-path="train.html"><a href="train.html#train-conf-outputs"><i class="fa fa-check"></i><b>7.1.4</b> Outputs</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="train.html"><a href="train.html#train-conf"><i class="fa fa-check"></i><b>7.2</b> The Configuration File</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="train.html"><a href="train.html#train-conf-data"><i class="fa fa-check"></i><b>7.2.1</b> Data</a></li>
+<li class="chapter" data-level="7.2.2" data-path="train.html"><a href="train.html#train-conf-model"><i class="fa fa-check"></i><b>7.2.2</b> Model</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="predict.html"><a href="predict.html"><i class="fa fa-check"></i><b>8</b> Application &amp; Prediction</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="predict.html"><a href="predict.html#predict-script"><i class="fa fa-check"></i><b>8.1</b> The Script</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="predict.html"><a href="predict.html#predict-script-required-files"><i class="fa fa-check"></i><b>8.1.1</b> Required Files</a></li>
+<li class="chapter" data-level="8.1.2" data-path="predict.html"><a href="predict.html#predict-script-required-r-packages"><i class="fa fa-check"></i><b>8.1.2</b> Required R Packages</a></li>
+<li class="chapter" data-level="8.1.3" data-path="predict.html"><a href="predict.html#predict-script-tasks"><i class="fa fa-check"></i><b>8.1.3</b> Tasks Performed in the Script</a></li>
+<li class="chapter" data-level="8.1.4" data-path="predict.html"><a href="predict.html#predict-script-fe"><i class="fa fa-check"></i><b>8.1.4</b> Feature Engineering on New Data</a></li>
+<li class="chapter" data-level="8.1.5" data-path="predict.html"><a href="predict.html#predict-script-make-predictions"><i class="fa fa-check"></i><b>8.1.5</b> Making Predictions on New Data</a></li>
+<li class="chapter" data-level="8.1.6" data-path="predict.html"><a href="predict.html#predict-script-outputs"><i class="fa fa-check"></i><b>8.1.6</b> Outputs</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="predict.html"><a href="predict.html#predict-conf"><i class="fa fa-check"></i><b>8.2</b> The Configuration File</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="predict.html"><a href="predict.html#predict-conf-data"><i class="fa fa-check"></i><b>8.2.1</b> Data</a></li>
+<li class="chapter" data-level="8.2.2" data-path="predict.html"><a href="predict.html#predict-conf-features"><i class="fa fa-check"></i><b>8.2.2</b> Features</a></li>
+<li class="chapter" data-level="8.2.3" data-path="predict.html"><a href="predict.html#predict-conf-model"><i class="fa fa-check"></i><b>8.2.3</b> Model</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">DNCP Project Documentation</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="train" class="section level1" number="7">
+<h1><span class="header-section-number">7</span> Training</h1>
+<div id="train-script" class="section level2" number="7.1">
+<h2><span class="header-section-number">7.1</span> The Script</h2>
+<p>The training script, <code>training.R</code>, creates a stratified train/test split, performs hyperparameter tuning, trains a model, and outputs key performance indicators (KPIs).</p>
+<div id="train-script-files" class="section level3" number="7.1.1">
+<h3><span class="header-section-number">7.1.1</span> Required Files</h3>
+<p>The <code>training.R</code> script is not a self contained script and requires the input of a training dataset and other scripts containing helper functions. The following is a list of necessary files and the structure they should follow:</p>
+<ul>
+<li><code>src/</code>
+<ul>
+<li><code>scripts/</code>
+<ul>
+<li><code>training.R</code> (encompassing script to run)</li>
+</ul></li>
+<li><code>functions/</code>
+<ul>
+<li><code>training_helpers.R</code> (set of helper functions to perform tasks in <code>training.R</code>)</li>
+</ul></li>
+</ul></li>
+<li><code>data/</code>
+<ul>
+<li><code>output/</code>
+<ul>
+<li><code>training_set_DATE.rds</code> (most recent training dataset created by <code>fe.R</code>)</li>
+</ul></li>
+</ul></li>
+<li><code>conf/</code>
+<ul>
+<li><code>training_conf.yaml</code> (configuration file for <code>training.R</code>)</li>
+</ul></li>
+</ul>
+</div>
+<div id="train-script-required-r-packages" class="section level3" number="7.1.2">
+<h3><span class="header-section-number">7.1.2</span> Required R Packages</h3>
+<p>The following is a list of R <strong>VERSION 4.1.0</strong> packages necessary for running <code>training.R</code> and its associated scripts and reports</p>
+<ul>
+<li><code>yaml</code> 2.2.1</li>
+<li><code>tidyverse</code> 1.3.1</li>
+<li><code>mlr3verse</code> 0.2.1</li>
+</ul>
+</div>
+<div id="train-script-tasks" class="section level3" number="7.1.3">
+<h3><span class="header-section-number">7.1.3</span> Tasks Performed by the Script</h3>
+<p>The <code>training.R</code> script takes in a cleaned and feature engineered dataset outputted by <code>fe.R</code>. To understand how to accomplish this output, please look at the <a href="fe.html#fe">Feature Engineering Documentation</a>.</p>
+<div id="train-script-train-test-split" class="section level4" number="7.1.3.1">
+<h4><span class="header-section-number">7.1.3.1</span> Creating the Train/Test Split</h4>
+<p>For model creation, the dataset is split into two subsets: a training set and test/holdout set. The training set is used to train a model, while the testing set is withheld from the training to try to simulate unseen data. Once a model is created using the training set, it is used to predict the prices in the test/holdout set Since, we have the observed prices for the contracts in the test/holdout set, we can evaluate the predictions. It is ideal for the training set and test/holdout set to have similar distributions of the target variable. Thus, to create the train and test sets, a stratified sampling technique was used to split the dataset.</p>
+<p>To do this, Sturges’ Rule was used – a principle providing guidelines on how many bins a dataset should be split up into. Using the formula for Sturges’ Rule and the number of rows in the dataset, the stratified sampling technique was used such that first, the data was sorted by the target variable. Next, <span class="math inline">\(\big\lceil \log_2 n\big\rceil + 1\)</span> strata were created from the sorted data with <span class="math inline">\(n\)</span> rows. Lastly, a random proportion of each strata was selected to be part of the training set. This allows for the training set to have a target variable distribution similar to the original full dataset.</p>
+<p>It is also important to note that all observations where the target value is missing are removed. We do not want to risk imputing the value of the target variable, so we drop missing values. To see how missing values are handled for predictor variables see the <a href="fe.html#fe">Feature Engineering Documentation</a>.</p>
+</div>
+<div id="train-script-model-setup" class="section level4" number="7.1.3.2">
+<h4><span class="header-section-number">7.1.3.2</span> Setting Up the Model</h4>
+<p>The modeling for this project was all conducted using the <code>mlr3</code> ecosystem. The ecosystem provides a universal framework for different models and enabled us to create a dynamic training script which can develop any type of model. The set up simply involves designating which variable is the target and which are predictors. Then choosing which type of model is going to be developed, and assigning values to desired parameters for the given model choice. A <em>random forest</em> and a <em>neural network</em> have vastly different parameter inputs such as number of trees vs learning rate, but we have implemented a system that enables for easy input of these values.</p>
+<p>Once the inputs of the model are established, the desired algorithm is ran. Depending on the algorithm, this can take seconds to hours.</p>
+</div>
+<div id="train-script-hyperparameter-tuning" class="section level4" number="7.1.3.3">
+<h4><span class="header-section-number">7.1.3.3</span> Hyperparameter Tuning</h4>
+<p>Due to this high degree of choice in parametric values, it is common to choose values based on reputation, intuition, or just adhere to the defaults. But, there is an algorithmic approach to use hyperparameter tuning to identify the ideal values for the given hyperparameters instead of manually inputting and guessing. Note that hyperparameter can be used interchangable with parameter in this context as a hyperparameter is just a parameter for a machine learning model. Through a structured hyperparameter-tuning process, various parametric configurations are evaluated on the same data splits using a resampling holdout set. Eventually, the configuration with the best performance is outputted, which can then be used to train a model.</p>
+</div>
+<div id="train-script-store-kpi" class="section level4" number="7.1.3.4">
+<h4><span class="header-section-number">7.1.3.4</span> Storing Model and KPIs</h4>
+<p>Once the model is developed, the key performance indicators (KPIs) that are specified in <code>training_conf.yaml</code> are calculated and outputted to the console. The model is then stored to the output destination.</p>
+</div>
+</div>
+<div id="train-conf-outputs" class="section level3" number="7.1.4">
+<h3><span class="header-section-number">7.1.4</span> Outputs</h3>
+<p>The following are the outputs produced by running <code>training.R</code>:</p>
+<ul>
+<li><p><code>output/MODELNAME_DATE.rds</code> (trained model where MODELNAME is the <em>name</em> section in the config file)</p></li>
+<li><p>printed model KPIs, e.g.</p>
+<pre><code>Non-Log RMSE: 24298515.95595 PYG (3644.77739 USD)
+Non-Log Median RMSE: 33708.62962 PYG (5.05629 USD)
+</code></pre></li>
+</ul>
+</div>
+</div>
+<div id="train-conf" class="section level2" number="7.2">
+<h2><span class="header-section-number">7.2</span> The Configuration File</h2>
+<p>The configuration file <code>training_conf.yaml</code> contains the inputs for the tasks outlined in the <a href="train.html#train">Training Documentation</a>. This file needs to be altered for any desired change of input. The following sections describe how to make those alterations. Every value must be stored in quotation marks unless it is a number or boolean (<em>TRUE</em>/<em>FALSE</em>). The training configuration file is broken down into three stages: the Data, the Features, and the Model.</p>
+<div id="train-conf-data" class="section level3" number="7.2.1">
+<h3><span class="header-section-number">7.2.1</span> Data</h3>
+<p>To load in the correct training dataset, the file location is sepcified under “<em>loc:"</em>, and the most recent run date of <code>fe.R</code> is entered in the”<em>last_run_date</em>" section. The input location in this configuration file should be the same as the output location in <code>fe_conf.yaml</code>.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb11-1"><a href="train.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span><span class="kw">:</span></span>
+<span id="cb11-2"><a href="train.html#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">loc</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;~/dncp/data/output&#39;</span></span>
+<span id="cb11-3"><a href="train.html#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">last_run_date</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;2021-07-29&#39;</span></span></code></pre></div>
+<div id="train-conf-features" class="section level4" number="7.2.1.1">
+<h4><span class="header-section-number">7.2.1.1</span> Features</h4>
+<p>Under the <em>Features</em> section, the desired target, id, and predictor variables are specified explicitly using the naming convention variable_dataset. For one-hot encoded variables, it is not necessary to state each column created for each category, solely add the overall column name. However, it is important each variable is contained within quotation marks. Below is an example.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb12-1"><a href="train.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">features</span><span class="kw">:</span></span>
+<span id="cb12-2"><a href="train.html#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">id</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;item_solicitado_id&#39;</span><span class="co"> # unique id</span></span>
+<span id="cb12-3"><a href="train.html#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">target</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;precio_unitario_item_solicitado_log&#39;</span></span>
+<span id="cb12-4"><a href="train.html#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co">    # all predictors to be used, including groups and one-hot encoded variables</span></span>
+<span id="cb12-5"><a href="train.html#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">predictors</span><span class="kw">:</span></span>
+<span id="cb12-6"><a href="train.html#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="kw">[</span><span class="st">&#39;contrato_abierto_llamado_grupo&#39;</span><span class="kw">,</span></span>
+<span id="cb12-7"><a href="train.html#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="at">         </span><span class="st">&#39;agricultura_familiar_item_solicitado&#39;</span><span class="kw">,</span></span>
+<span id="cb12-8"><a href="train.html#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="at">         </span><span class="st">&#39;produccion_nacional_item_solicitado&#39;</span><span class="kw">,</span></span>
+<span id="cb12-9"><a href="train.html#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="at">         </span><span class="st">&#39;service&#39;</span><span class="kw">,</span></span>
+<span id="cb12-10"><a href="train.html#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="at">         </span><span class="st">&#39;descripcion_ingles_producto_n1&#39;</span><span class="kw">,</span></span>
+<span id="cb12-11"><a href="train.html#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="at">         </span><span class="st">&#39;police_buyer&#39;</span><span class="kw">,</span></span>
+<span id="cb12-12"><a href="train.html#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="at">         </span><span class="st">&#39;electricity_buyer&#39;</span><span class="kw">,</span></span>
+<span id="cb12-13"><a href="train.html#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="at">         </span><span class="st">&#39;food_context&#39;</span><span class="kw">,</span></span>
+<span id="cb12-14"><a href="train.html#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="at">         </span><span class="st">&#39;vehicle_context&#39;</span><span class="kw">]</span></span></code></pre></div>
+<p>For variables that were one-hot encoded, explicitly specify their original name under the <em>one_hot_encoded_vars</em> section IN ADDITION to being in the <em>predictor</em> section.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb13-1"><a href="train.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">one_hot_encoded_vars</span><span class="kw">:</span></span>
+<span id="cb13-2"><a href="train.html#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">[</span><span class="st">&#39;tipo_unidad_contratacion&#39;</span><span class="kw">,</span></span>
+<span id="cb13-3"><a href="train.html#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="at">     </span><span class="st">&#39;nombre_nivel_entidad&#39;</span><span class="kw">,</span></span>
+<span id="cb13-4"><a href="train.html#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="at">     </span><span class="st">&#39;forma_adjudicacion_llamado&#39;</span><span class="kw">,</span></span>
+<span id="cb13-5"><a href="train.html#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="at">     </span><span class="st">&#39;forma_pago_llamado&#39;</span><span class="kw">,</span></span>
+<span id="cb13-6"><a href="train.html#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="at">     </span><span class="st">&#39;descripcion_ingles_producto_n1&#39;</span><span class="kw">]</span></span></code></pre></div>
+</div>
+</div>
+<div id="train-conf-model" class="section level3" number="7.2.2">
+<h3><span class="header-section-number">7.2.2</span> Model</h3>
+<p>The model building section of <code>training_conf.yaml</code> has the most variation in terms of inputs. The <em>name</em> key is to uniquely identify the training run, and will be included in the filename of the stored model. It is recommended to include the model type in the name. Additionally, the <em>model</em> section is where the train/test split proportions are specified. Typical splits are 70% (or 80%) of the data used for training and the remaining 30% (or 20%) used for testing. Input the proportion for the training set under <em>train_prop</em> as a decimal value.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb14-1"><a href="train.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">model</span><span class="kw">:</span></span>
+<span id="cb14-2"><a href="train.html#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;ranger-no-outliers&#39;</span></span>
+<span id="cb14-3"><a href="train.html#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">train_prop</span><span class="kw">:</span><span class="at"> </span><span class="fl">0.8</span></span></code></pre></div>
+<p>In this <em>model</em> section, the desired algorithm can be specified under the <em>type</em> section. The selection must be an acceptable <code>mlr3</code> algorithm, where the list of possibilities can be found entering <code>mlr3verse::mlr_learners</code> into the R console or looking below:</p>
+<pre><code>classif.cv_glmnet, classif.debug, classif.featureless, classif.glmnet, 
+classif.kknn, classif.lda, classif.log_reg, classif.multinom, 
+classif.naive_bayes, classif.nnet,classif.qda, classif.ranger, 
+classif.rpart, classif.svm, classif.xgboost, 
+  
+clust.agnes, clust.ap, clust.cmeans, clust.cobweb, clust.dbscan, clust.diana, 
+clust.em, clust.fanny, clust.featureless, clust.ff, clust.kkmeans, clust.kmeans, 
+clust.MBatchKMeans, clust.meanshift, clust.pam, clust.SimpleKMeans, clust.xmeans, 
+  
+dens.hist, dens.kde,
+  
+regr.cv_glmnet, regr.featureless, regr.glmnet, regr.kknn, regr.km, regr.lm, 
+regr.ranger, regr.rpart, regr.svm, regr.xgboost, 
+  
+surv.coxph, surv.cv_glmnet, surv.glmnet, surv.kaplan, 
+surv.ranger, surv.rpart, surv.xgboost</code></pre>
+<div id="train-conf-param" class="section level4" number="7.2.2.1">
+<h4><span class="header-section-number">7.2.2.1</span> Parameter Choices</h4>
+<p>The next and most important aspect of the model development is the parameters. Each algorithm has various different parameters that can be adjusted, so it was important to enable access to those options regardless of the algorithm. Say the desired model type is a random forest. In the <code>mlr3</code> ecosystem, a random forest regression is the model <em>‘regr.ranger’</em>. To find the options for the parameters, enter <code>mlr3verse::lrn("regr.ranger")$param_set</code> into the R console.</p>
+<p>The important information is the output are the <strong>id</strong>, <strong>lower</strong>, <strong>upper</strong>, and <strong>default</strong> columns. The <strong>id</strong> is the name of the parameter, the <strong>lower</strong> and <strong>upper</strong> values are the bounds for the parameter. When the bounds are <code>-Inf</code> to <code>Inf</code>, this means it can be any numeric value. When the bounds are <code>NA</code> and the <strong>nlevels</strong> is 2, then this is a <em>TRUE</em>/<em>FALSE</em> parameter. The <strong>default</strong> is what the parameter is automatically set to when running the algorithm. Parameters should only be customized if the default value is not desired.</p>
+<p>The example output for <code>regr.ranger</code> is below:</p>
+<pre><code>                            id    class lower upper nlevels        default  
+1:                        alpha ParamDbl  -Inf   Inf     Inf            0.5
+2:       always.split.variables ParamUty    NA    NA     Inf &lt;NoDefault[3]&gt;
+3:                      holdout ParamLgl    NA    NA       2          FALSE
+4:                   importance ParamFct    NA    NA       4 &lt;NoDefault[3]&gt;
+5:                   keep.inbag ParamLgl    NA    NA       2          FALSE
+6:                    max.depth ParamInt  -Inf   Inf     Inf               
+7:                min.node.size ParamInt     1   Inf     Inf              5
+8:                     min.prop ParamDbl  -Inf   Inf     Inf            0.1
+9:                      minprop ParamDbl  -Inf   Inf     Inf            0.1
+10:                         mtry ParamInt     1   Inf     Inf &lt;NoDefault[3]&gt;
+11:            num.random.splits ParamInt     1   Inf     Inf              1
+12:                  num.threads ParamInt     1   Inf     Inf              1
+13:                    num.trees ParamInt     1   Inf     Inf            500
+14:                    oob.error ParamLgl    NA    NA       2           TRUE
+15:                     quantreg ParamLgl    NA    NA       2          FALSE
+16:        regularization.factor ParamUty    NA    NA     Inf              1
+17:      regularization.usedepth ParamLgl    NA    NA       2          FALSE
+18:                      replace ParamLgl    NA    NA       2           TRUE
+19:    respect.unordered.factors ParamFct    NA    NA       3         ignore
+20:              sample.fraction ParamDbl     0     1     Inf &lt;NoDefault[3]&gt;
+21:                  save.memory ParamLgl    NA    NA       2          FALSE
+22: scale.permutation.importance ParamLgl    NA    NA       2          FALSE
+23:                    se.method ParamFct    NA    NA       2        infjack
+24:                         seed ParamInt  -Inf   Inf     Inf               
+25:         split.select.weights ParamDbl     0     1     Inf &lt;NoDefault[3]&gt;
+26:                    splitrule ParamFct    NA    NA       3       variance
+27:                      verbose ParamLgl    NA    NA       2           TRUE
+28:                 write.forest ParamLgl    NA    NA       2           TRUE
+</code></pre>
+<p>Say that from the output of the parameters, it is decided that the parameters to customize are the number of trees, the number of variables randomly split on for each tree, and whether or not to replace samples. Their custom values are inputted into the <em>parameter</em> section using key-value pairs where the key is the <strong>id</strong> and the value is within the <strong>upper</strong> and <strong>lower</strong> bounds.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb17-1"><a href="train.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">type</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;regr.ranger&quot;</span></span>
+<span id="cb17-2"><a href="train.html#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">parameters</span><span class="kw">:</span></span>
+<span id="cb17-3"><a href="train.html#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">num.trees</span><span class="kw">:</span><span class="at"> </span><span class="dv">501</span></span>
+<span id="cb17-4"><a href="train.html#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">mtry</span><span class="kw">:</span><span class="at"> </span><span class="dv">10</span></span>
+<span id="cb17-5"><a href="train.html#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">replace</span><span class="kw">:</span><span class="at"> </span><span class="ch">FALSE</span></span></code></pre></div>
+</div>
+<div id="train-conf-hyperparameter-tuning" class="section level4" number="7.2.2.2">
+<h4><span class="header-section-number">7.2.2.2</span> Hyperparameter Tuning</h4>
+<p>The next step is hyperparameter tuning, which, depending upon the grid size and parameter selection, might take hours to run. Thus, in the configuration file, this step can be ignored by setting <em>run</em> to <em>FALSE</em>. Using the <em>tuner</em> <em>‘grid_search’</em>, all possible combinations of hyperparameters are tested between the specified <em>lower</em>, <em>upper</em> bounds for each parameter, and similarly, <em>‘random_search’</em> will randomly choose values. The higher the number of discrete values for hyperparameters and the more hyperparameters, the more computationally expensive. We recommend also specifying a budget of 20 evaluations using <em>n_evals</em>.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb18-1"><a href="train.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hyperparameter_tuning</span><span class="kw">:</span></span>
+<span id="cb18-2"><a href="train.html#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">run</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb18-3"><a href="train.html#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">tuner</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;random_search&#39;</span></span>
+<span id="cb18-4"><a href="train.html#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">n_evals</span><span class="kw">:</span><span class="at"> </span><span class="dv">20</span></span></code></pre></div>
+<p>As seen in the <a href="train.html#train-conf-param">Parameter Configuration</a> section, the individual parameters are model-dependent and thus need to be adjusted for each algorithm. Refer to that section on how to identify parameters and their bounds.</p>
+<p>Once the desired parameters are identified, the configuration file should be filled out with three nested key value pairs of <em>type</em>, <em>lower</em> and <em>upper</em> for each parameter, where <em>type</em> is the data type (<em>‘int’</em> is integer, <em>‘dbl’</em> is double, <em>‘fct’</em> is factor, and <em>‘lgl’</em> is logical), and the <em>lower</em> and <em>upper</em> values are the desired bounds for the parameter. These bounds must be inbetween the overall bounds for the parameter, but should only be the range that is desired for testing. For example, the variable <strong>x</strong> may be allowed to be any value btween 0 and 100, but it is only desired to test values between 30 and 40, so the bounds are set at 30 and 40. Once the ideal parameters are determined, the script will add them to the model before it is trained. Below is an example configuration for an XGBoost model:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb19-1"><a href="train.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">parameters</span><span class="kw">:</span></span>
+<span id="cb19-2"><a href="train.html#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">eta</span><span class="kw">:</span></span>
+<span id="cb19-3"><a href="train.html#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">type</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;dbl&#39;</span></span>
+<span id="cb19-4"><a href="train.html#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">lower</span><span class="kw">:</span><span class="at"> </span><span class="dv">0</span></span>
+<span id="cb19-5"><a href="train.html#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">upper</span><span class="kw">:</span><span class="at"> </span><span class="dv">1</span></span>
+<span id="cb19-6"><a href="train.html#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">max_depth</span><span class="kw">:</span></span>
+<span id="cb19-7"><a href="train.html#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">type</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;int&#39;</span></span>
+<span id="cb19-8"><a href="train.html#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">lower</span><span class="kw">:</span><span class="at"> </span><span class="dv">1</span></span>
+<span id="cb19-9"><a href="train.html#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">upper</span><span class="kw">:</span><span class="at"> </span><span class="dv">100</span></span>
+<span id="cb19-10"><a href="train.html#cb19-10" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">subsample</span><span class="kw">:</span></span>
+<span id="cb19-11"><a href="train.html#cb19-11" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">type</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;dbl&#39;</span></span>
+<span id="cb19-12"><a href="train.html#cb19-12" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">lower</span><span class="kw">:</span><span class="at"> </span><span class="dv">0</span></span>
+<span id="cb19-13"><a href="train.html#cb19-13" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">upper</span><span class="kw">:</span><span class="at"> </span><span class="dv">1</span></span>
+<span id="cb19-14"><a href="train.html#cb19-14" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">nrounds</span><span class="kw">:</span></span>
+<span id="cb19-15"><a href="train.html#cb19-15" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">type</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;int&#39;</span></span>
+<span id="cb19-16"><a href="train.html#cb19-16" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">lower</span><span class="kw">:</span><span class="at"> </span><span class="dv">40</span></span>
+<span id="cb19-17"><a href="train.html#cb19-17" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">upper</span><span class="kw">:</span><span class="at"> </span><span class="dv">400</span></span></code></pre></div>
+<p>Additionally, here is an example for a random forest algorithm:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb20-1"><a href="train.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">parameters</span><span class="kw">:</span></span>
+<span id="cb20-2"><a href="train.html#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">mtry</span><span class="kw">:</span></span>
+<span id="cb20-3"><a href="train.html#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">type</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;int&#39;</span></span>
+<span id="cb20-4"><a href="train.html#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">lower</span><span class="kw">:</span><span class="at"> </span><span class="dv">1</span></span>
+<span id="cb20-5"><a href="train.html#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">upper</span><span class="kw">:</span><span class="at"> </span><span class="dv">15</span></span>
+<span id="cb20-6"><a href="train.html#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">ntree</span><span class="kw">:</span></span>
+<span id="cb20-7"><a href="train.html#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">type</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;int&#39;</span></span>
+<span id="cb20-8"><a href="train.html#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">lower</span><span class="kw">:</span><span class="at"> </span><span class="dv">500</span></span>
+<span id="cb20-9"><a href="train.html#cb20-9" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">upper</span><span class="kw">:</span><span class="at"> </span><span class="dv">1550</span></span></code></pre></div>
+</div>
+<div id="train-conf-metrics" class="section level4" number="7.2.2.3">
+<h4><span class="header-section-number">7.2.2.3</span> Metrics</h4>
+<p>The final step is to list the key performance indicators for evaluation under the <em>metrics</em> section. Once again, these must be written in using the naming conventions of <code>mlr3</code>.</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb21-1"><a href="train.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">metrics</span><span class="kw">:</span></span>
+<span id="cb21-2"><a href="train.html#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">[</span><span class="st">&quot;regr.rmse&quot;</span><span class="kw">,</span></span>
+<span id="cb21-3"><a href="train.html#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="at">     </span><span class="st">&quot;regr.mae&quot;</span><span class="kw">,</span></span>
+<span id="cb21-4"><a href="train.html#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="at">     </span><span class="st">&quot;regr.rsq&quot;</span><span class="kw">]</span></span></code></pre></div>
+
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="eda.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="predict.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "lunr",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
