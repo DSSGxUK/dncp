@@ -217,20 +217,12 @@ pre code {
 </div>
 <div id="train_tasks" class="section level2">
 <h2><strong>Tasks Performed in the Script</strong></h2>
-<<<<<<< HEAD:reports/training_documentation.html
-<p>The <code>training.R</code> script takes in a cleaned and feature engineered dataset outputted by <code>fe.R</code>. To understand how to accomplish this output, please look at <a href="FE%20DOC%20LINK">Feature Engineering Documentation</a>.</p>
-<div id="train_test" class="section level3">
-<h3><strong>Creating a Train/Test Split</strong></h3>
-<p>For model creation, the dataset is split into two subsets: a training set and test/holdout set. The training set is used to train a model, while the testing set is withheld from the training to try to simulate unseen data. Once a model is created using the training set, it is used to predict the prices in the test/holdout set Since, we have the observed prices for the contracts in the test/holdout set, we can evaluate the predictions. It is ideal for the training set and test/holdout set to have similar distributions of the target variable. Thus, to create the train and test sets, a stratified sampling technique was used to split the dataset.</p>
-<p>To do this, Sturges’ Rule, a principle providing guidelines on how many bins a dataset should be split up into, was employed. Using the formula for Sturges’ Rule and the number of rows in the dataset, the stratified sampling technique was used such that first, the data was sorted by the target variable; next, <span class="math inline">\(1+3.3*\textrm{log}(n)\)</span> strata were created from the sorted data with <span class="math inline">\(n\)</span> rows; and lastly, a random proportion of each strata was selected to be part of the training set. This allows for the training set to have a target variable distribution similar to the original full dataset.</p>
-=======
 <p>The <code>training.R</code> script takes in a cleaned and feature engineered dataset outputted by <code>fe.R</code>. To understand how to accomplish this output, please look at <a href="feature-engineering_documentation.html">Feature Engineering Documentation</a>.</p>
 <div id="train_test" class="section level3">
 <h3><strong>Creating a Train/Test Split</strong></h3>
 <p>For model creation, the dataset is split into two subsets: a training set and test/holdout set. The training set is used to train a model, while the testing set is withheld from the training to try to simulate unseen data. Once a model is created using the training set, it is used to predict the prices in the test/holdout set Since, we have the observed prices for the contracts in the test/holdout set, we can evaluate the predictions. It is ideal for the training set and test/holdout set to have similar distributions of the target variable. Thus, to create the train and test sets, a stratified sampling technique was used to split the dataset.</p>
-<p>ETHAN TO EXPLAIN STURGE’S RULE</p>
->>>>>>> 63879728abce87c2813e3a62d66c4efe1def51f9:docs/training_documentation.html
-<p>It is also important to note that all observations where the target value is missing are removed. We do not want to risk imputing the value of the target variable, so we drop missing values. To see how missing values are handled for predictor variables see the <a href="FE%20DOC%20LINK">Feature Engineering Documentation</a>.</p>
+<p>To do this, Sturges’ Rule, a principle providing guidelines on how many bins a dataset should be split up into, was employed. Using the formula for Sturges’ Rule and the number of rows in the dataset, the stratified sampling technique was used such that first, the data was sorted by the target variable; next, <span class="math inline">\(1+3.3*\textrm{log}(n)\)</span> strata were created from the sorted data with <span class="math inline">\(n\)</span> rows; and lastly, a random proportion of each strata was selected to be part of the training set. This allows for the training set to have a target variable distribution similar to the original full dataset.</p>
+<p>It is also important to note that all observations where the target value is missing are removed. We do not want to risk imputing the value of the target variable, so we drop missing values. To see how missing values are handled for predictor variables see the <a href="feature-engineering_documentation.html">Feature Engineering Documentation</a>.</p>
 </div>
 <div id="model_setup" class="section level3">
 <h3><strong>Setting Up the Model</strong></h3>
@@ -238,13 +230,8 @@ pre code {
 <p>Once the inputs of the model are established, the desired algorithm is ran. Depending on the algorithm, this can take seconds to hours.</p>
 </div>
 <div id="hyp" class="section level3">
-<<<<<<< HEAD:reports/training_documentation.html
-<h3><strong>Hyper Parameter Tuning</strong></h3>
-<p>Once the model is setup, The deciding factor of model comes up to the Parameter choice. There are different approaches to select hyperparameters. Due to this high degree of choice, many users choose the values of hyperparameters based on reputation, intuitive appeal, or adhere to the default parameter values. This may result in a structured hyperparameter-tuning process and can increase the potential of our model. This describes tuning problem and store the results and to determine the configuration with best observed performance.</p>
-=======
 <h3><strong>Hyperparameter Tuning</strong></h3>
 <p>Due to this high degree of choice in parametric values, it is common to choose values based on reputation, intuition, or just adhere to the defaults. But, there is an algorithmic approach to use hyperparameter tuning to identify the ideal values for the given hyperparameters instead of manually inputting and guessing. Note that hyperparameter can be used interchangable with parameter in this context as a hyperparameter is just a parameter for a machine learning model. Through a structured hyperparameter-tuning process, various parametric configurations are evaluated on the same data splits using a resampling holdout set. Eventually, the configuration with the best performance is outputted, which can then be used to train a model.</p>
->>>>>>> 63879728abce87c2813e3a62d66c4efe1def51f9:docs/training_documentation.html
 </div>
 <div id="store" class="section level3">
 <h3><strong>Storing Model and KPIs</strong></h3>
@@ -365,13 +352,8 @@ parameters:
     run: true
     tuner: &#39;random_search&#39;
     n_evals: 20</code></pre>
-<<<<<<< HEAD:reports/training_documentation.html
-<p>The grid method runs all possible combinations of predefined values for hyperparameters by setting <strong>lower</strong>, <strong>upper</strong> bound of particular parameter and more paramter can be added in <em>hyperparameter_tuning</em> section. The higher the number of discrete values for hyperparameters and the more hyperparameters, the more computationally expensive. we specify a budget of 20 evaluations and then put everything together.</p>
-<p>Indeed, hyperparameter tuning has a strong effect on the performance of the model. See below an example parameter choice for XGBoost model:</p>
-=======
 <p>As seen in the <a href="#conf_param">Parameter</a> section, the individual parameters are model-dependent and thus need to be adjusted for each algorithm. Refer to that section on how to identify parameters and their bounds.</p>
 <p>Once the desired parameters are identified, the configuration file should be filled out with three nested key value pairs of <em>type</em>, <em>lower</em> and <em>upper</em> for each parameter, where <em>type</em> is the data type (int = integer, dbl = double, fct=factor), and the <em>lower</em> and <em>upper</em> values are the desired bounds for the parameter. These bounds must be inbetween the overall bounds for the parameter, but should only be the range that is desired for testing. For example, the variable <strong>x</strong> may be allowed to be any value btween 0 and 100, but it is only desired to test values between 30 and 40, so the bounds are set at 30 and 40. Once the ideal parameters are determined, the script will add them to the model before it is trained. Below is an example configuration for an XGboost model.</p>
->>>>>>> 63879728abce87c2813e3a62d66c4efe1def51f9:docs/training_documentation.html
 <pre class="yaml"><code>parameters:
             eta:
                 type: &#39;dbl&#39;
@@ -412,20 +394,11 @@ parameters:
 </div>
 <div id="outputs" class="section level2">
 <h2><strong>Outputs</strong></h2>
-<<<<<<< HEAD:reports/training_documentation.html
 <p>The following are the outputs produced by running <code>training.R</code> and the associated scripts and Evaluation report will be generated.</p>
 <pre><code>Non-Log RMSE: 24298515.95595 PYG (3644.77739 USD) 
 Non-Log Median RMSE: 33708.62962 PYG (5.05629 USD) 
 </code></pre>
-=======
-<p>The following are the outputs produced by running <code>training.R</code> and the associated scripts and reports.</p>
-<ul>
-<li><p>data/</p>
-<ul>
-<li>output/MODELNAME_DATE.rds (Trained model where MODELNAME is the <em>name</em> section in the config file)</li>
-</ul></li>
-</ul>
->>>>>>> 63879728abce87c2813e3a62d66c4efe1def51f9:docs/training_documentation.html
+<pre><code>-   output/MODELNAME_DATE.rds (Trained model where MODELNAME is the *name* section in the config file)</code></pre>
 </div>
 </div>
 
