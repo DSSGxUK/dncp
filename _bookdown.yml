@@ -1,0 +1,7 @@
+book_filename: "dncp-documentation"
+language:
+  ui:
+    chapter_name: ""
+delete_merged_file: true
+new_session: true
+output_dir: "docs"

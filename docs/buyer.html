@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3 Buyer Groupings | DNCP Project Documentation</title>
+  <meta name="description" content="This is the documentation for the DNCP Project of the Summer 2021 DSSGx Fellowship at the University of Warwick and LMU." />
+  <meta name="generator" content="bookdown 0.23 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3 Buyer Groupings | DNCP Project Documentation" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is the documentation for the DNCP Project of the Summer 2021 DSSGx Fellowship at the University of Warwick and LMU." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3 Buyer Groupings | DNCP Project Documentation" />
+  
+  <meta name="twitter:description" content="This is the documentation for the DNCP Project of the Summer 2021 DSSGx Fellowship at the University of Warwick and LMU." />
+  
+
+
+
+<meta name="date" content="2021-08-25" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="fe.html"/>
+<link rel="next" href="context.html"/>
+<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">DNCP Documentation</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="fe.html"><a href="fe.html"><i class="fa fa-check"></i><b>2</b> Feature Engineering</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="fe.html"><a href="fe.html#fe-script"><i class="fa fa-check"></i><b>2.1</b> The Script</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="fe.html"><a href="fe.html#fe-script-required-files"><i class="fa fa-check"></i><b>2.1.1</b> Required Files</a></li>
+<li class="chapter" data-level="2.1.2" data-path="fe.html"><a href="fe.html#fe-script-required-r-packages"><i class="fa fa-check"></i><b>2.1.2</b> Required R Packages</a></li>
+<li class="chapter" data-level="2.1.3" data-path="fe.html"><a href="fe.html#fe-script-tasks-performed"><i class="fa fa-check"></i><b>2.1.3</b> Tasks Performed</a></li>
+<li class="chapter" data-level="2.1.4" data-path="fe.html"><a href="fe.html#fe-script-outputs"><i class="fa fa-check"></i><b>2.1.4</b> Outputs</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="fe.html"><a href="fe.html#fe-conf"><i class="fa fa-check"></i><b>2.2</b> The Configuration File</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="fe.html"><a href="fe.html#fe-conf-data-load"><i class="fa fa-check"></i><b>2.2.1</b> Loading in Data</a></li>
+<li class="chapter" data-level="2.2.2" data-path="fe.html"><a href="fe.html#features"><i class="fa fa-check"></i><b>2.2.2</b> Features</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="buyer.html"><a href="buyer.html"><i class="fa fa-check"></i><b>3</b> Buyer Groupings</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="buyer.html"><a href="buyer.html#buyer-information-fields"><i class="fa fa-check"></i><b>3.1</b> Buyer Information Fields</a></li>
+<li class="chapter" data-level="3.2" data-path="buyer.html"><a href="buyer.html#buyer-add-info-to-tenders"><i class="fa fa-check"></i><b>3.2</b> Adding Buyer Information to Tenders</a></li>
+<li class="chapter" data-level="3.3" data-path="buyer.html"><a href="buyer.html#buyer-level"><i class="fa fa-check"></i><b>3.3</b> Buyer Levels</a></li>
+<li class="chapter" data-level="3.4" data-path="buyer.html"><a href="buyer.html#buyer-name-description"><i class="fa fa-check"></i><b>3.4</b> Buyer Names and Descriptions</a></li>
+<li class="chapter" data-level="3.5" data-path="buyer.html"><a href="buyer.html#buyer-frequent-words"><i class="fa fa-check"></i><b>3.5</b> Most Frequent Words</a></li>
+<li class="chapter" data-level="3.6" data-path="buyer.html"><a href="buyer.html#buyer-groupings"><i class="fa fa-check"></i><b>3.6</b> Final Buyer Groupings</a></li>
+<li class="chapter" data-level="3.7" data-path="buyer.html"><a href="buyer.html#buyer-variable-importance"><i class="fa fa-check"></i><b>3.7</b> Variable Importance Exploration</a></li>
+<li class="chapter" data-level="3.8" data-path="buyer.html"><a href="buyer.html#buyer-conclusions"><i class="fa fa-check"></i><b>3.8</b> Implementation Conclusions</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="context.html"><a href="context.html"><i class="fa fa-check"></i><b>4</b> Context Groupings</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="context.html"><a href="context.html#context-information-fields"><i class="fa fa-check"></i><b>4.1</b> Context Information Fields</a></li>
+<li class="chapter" data-level="4.2" data-path="context.html"><a href="context.html#context-frequent-words"><i class="fa fa-check"></i><b>4.2</b> Most Frequent Words</a></li>
+<li class="chapter" data-level="4.3" data-path="context.html"><a href="context.html#context-word-assoc"><i class="fa fa-check"></i><b>4.3</b> Most Frequent Word Associations</a></li>
+<li class="chapter" data-level="4.4" data-path="context.html"><a href="context.html#context-word-regression"><i class="fa fa-check"></i><b>4.4</b> Most Influential Words</a></li>
+<li class="chapter" data-level="4.5" data-path="context.html"><a href="context.html#context-groupings"><i class="fa fa-check"></i><b>4.5</b> Final Context Groupings</a></li>
+<li class="chapter" data-level="4.6" data-path="context.html"><a href="context.html#context-conclusions"><i class="fa fa-check"></i><b>4.6</b> Implementation Conclusions</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="outlier.html"><a href="outlier.html"><i class="fa fa-check"></i><b>5</b> Outlier Removal</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="outlier.html"><a href="outlier.html#outlier-anomaly-scores"><i class="fa fa-check"></i><b>5.1</b> Anomaly Scores</a></li>
+<li class="chapter" data-level="5.2" data-path="outlier.html"><a href="outlier.html#outlier-statistics"><i class="fa fa-check"></i><b>5.2</b> Outlier Statistics</a></li>
+<li class="chapter" data-level="5.3" data-path="outlier.html"><a href="outlier.html#outlier-descriptions"><i class="fa fa-check"></i><b>5.3</b> Outlier Descriptions</a></li>
+<li class="chapter" data-level="5.4" data-path="outlier.html"><a href="outlier.html#outlier-conclusions"><i class="fa fa-check"></i><b>5.4</b> Implementation Conclusions</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="eda.html"><a href="eda.html"><i class="fa fa-check"></i><b>6</b> Exploratory Data Analysis</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="eda.html"><a href="eda.html#eda-pdf"><i class="fa fa-check"></i><b>6.1</b> The PDF File</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="eda.html"><a href="eda.html#eda-pdf-types"><i class="fa fa-check"></i><b>6.1.1</b> Types of EDA Performed</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="eda.html"><a href="eda.html#eda-data-dictionary"><i class="fa fa-check"></i><b>6.2</b> The Data Dictionary</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="train.html"><a href="train.html"><i class="fa fa-check"></i><b>7</b> Training</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="train.html"><a href="train.html#train-script"><i class="fa fa-check"></i><b>7.1</b> The Script</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="train.html"><a href="train.html#train-script-files"><i class="fa fa-check"></i><b>7.1.1</b> Required Files</a></li>
+<li class="chapter" data-level="7.1.2" data-path="train.html"><a href="train.html#train-script-required-r-packages"><i class="fa fa-check"></i><b>7.1.2</b> Required R Packages</a></li>
+<li class="chapter" data-level="7.1.3" data-path="train.html"><a href="train.html#train-script-tasks"><i class="fa fa-check"></i><b>7.1.3</b> Tasks Performed by the Script</a></li>
+<li class="chapter" data-level="7.1.4" data-path="train.html"><a href="train.html#train-conf-outputs"><i class="fa fa-check"></i><b>7.1.4</b> Outputs</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="train.html"><a href="train.html#train-conf"><i class="fa fa-check"></i><b>7.2</b> The Configuration File</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="train.html"><a href="train.html#train-conf-data"><i class="fa fa-check"></i><b>7.2.1</b> Data</a></li>
+<li class="chapter" data-level="7.2.2" data-path="train.html"><a href="train.html#train-conf-model"><i class="fa fa-check"></i><b>7.2.2</b> Model</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="predict.html"><a href="predict.html"><i class="fa fa-check"></i><b>8</b> Application &amp; Prediction</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="predict.html"><a href="predict.html#predict-script"><i class="fa fa-check"></i><b>8.1</b> The Script</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="predict.html"><a href="predict.html#predict-script-required-files"><i class="fa fa-check"></i><b>8.1.1</b> Required Files</a></li>
+<li class="chapter" data-level="8.1.2" data-path="predict.html"><a href="predict.html#predict-script-required-r-packages"><i class="fa fa-check"></i><b>8.1.2</b> Required R Packages</a></li>
+<li class="chapter" data-level="8.1.3" data-path="predict.html"><a href="predict.html#predict-script-tasks"><i class="fa fa-check"></i><b>8.1.3</b> Tasks Performed in the Script</a></li>
+<li class="chapter" data-level="8.1.4" data-path="predict.html"><a href="predict.html#predict-script-fe"><i class="fa fa-check"></i><b>8.1.4</b> Feature Engineering on New Data</a></li>
+<li class="chapter" data-level="8.1.5" data-path="predict.html"><a href="predict.html#predict-script-make-predictions"><i class="fa fa-check"></i><b>8.1.5</b> Making Predictions on New Data</a></li>
+<li class="chapter" data-level="8.1.6" data-path="predict.html"><a href="predict.html#predict-script-outputs"><i class="fa fa-check"></i><b>8.1.6</b> Outputs</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="predict.html"><a href="predict.html#predict-conf"><i class="fa fa-check"></i><b>8.2</b> The Configuration File</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="predict.html"><a href="predict.html#predict-conf-data"><i class="fa fa-check"></i><b>8.2.1</b> Data</a></li>
+<li class="chapter" data-level="8.2.2" data-path="predict.html"><a href="predict.html#predict-conf-features"><i class="fa fa-check"></i><b>8.2.2</b> Features</a></li>
+<li class="chapter" data-level="8.2.3" data-path="predict.html"><a href="predict.html#predict-conf-model"><i class="fa fa-check"></i><b>8.2.3</b> Model</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="eval.html"><a href="eval.html"><i class="fa fa-check"></i><b>9</b> Model Evaluation</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="eval.html"><a href="eval.html#eval-metrics"><i class="fa fa-check"></i><b>9.1</b> Evaluation Metrics</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="eval.html"><a href="eval.html#eval-rmse"><i class="fa fa-check"></i><b>9.1.1</b> RMSE</a></li>
+<li class="chapter" data-level="9.1.2" data-path="eval.html"><a href="eval.html#eval-range"><i class="fa fa-check"></i><b>9.1.2</b> Range</a></li>
+<li class="chapter" data-level="9.1.3" data-path="eval.html"><a href="eval.html#eval-rsq"><i class="fa fa-check"></i><b>9.1.3</b> <span class="math inline">\(R^2\)</span></a></li>
+<li class="chapter" data-level="9.1.4" data-path="eval.html"><a href="eval.html#eval-mae"><i class="fa fa-check"></i><b>9.1.4</b> MAE</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="eval.html"><a href="eval.html#eval-important-features"><i class="fa fa-check"></i><b>9.2</b> Most Important Features</a></li>
+<li class="chapter" data-level="9.3" data-path="eval.html"><a href="eval.html#eval-models"><i class="fa fa-check"></i><b>9.3</b> Models Used</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="eval.html"><a href="eval.html#eval-ols"><i class="fa fa-check"></i><b>9.3.1</b> Linear Regression</a></li>
+<li class="chapter" data-level="9.3.2" data-path="eval.html"><a href="eval.html#eval-rf"><i class="fa fa-check"></i><b>9.3.2</b> Random Forest</a></li>
+<li class="chapter" data-level="9.3.3" data-path="eval.html"><a href="eval.html#eval-xgb"><i class="fa fa-check"></i><b>9.3.3</b> XGBoost</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="eval.html"><a href="eval.html#eval-top-10"><i class="fa fa-check"></i><b>9.4</b> Top 10 Most Important Features</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="eval.html"><a href="eval.html#eval-top-10-goods"><i class="fa fa-check"></i><b>9.4.1</b> Goods-Only Dataset</a></li>
+<li class="chapter" data-level="9.4.2" data-path="eval.html"><a href="eval.html#eval-top-10-services"><i class="fa fa-check"></i><b>9.4.2</b> Services-Only Dataset</a></li>
+<li class="chapter" data-level="9.4.3" data-path="eval.html"><a href="eval.html#eval-top-10-combined"><i class="fa fa-check"></i><b>9.4.3</b> Combined Dataset</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="conclusions.html"><a href="conclusions.html"><i class="fa fa-check"></i><b>10</b> Conclusions</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="conclusions.html"><a href="conclusions.html#outcomes"><i class="fa fa-check"></i><b>10.1</b> Outcomes</a></li>
+<li class="chapter" data-level="10.2" data-path="conclusions.html"><a href="conclusions.html#limitations"><i class="fa fa-check"></i><b>10.2</b> Limitations</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">DNCP Project Documentation</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="buyer" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Buyer Groupings</h1>
+<div id="buyer-information-fields" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Buyer Information Fields</h2>
+<p>Buyers will be considered at the tender level (i.e., one buyer for each row in the <code>llamado</code> table). The tables containing buyer/entity information are:</p>
+<ol style="list-style-type: decimal">
+<li><p><code>unidad_contratacion</code></p>
+<ul>
+<li>left join onto pac by <code>pac.unidad_contratacion_id = unidad_contratacion.id</code></li>
+<li><strong>variable of interest:</strong> <code>descripcion</code> (description of the buyer; probably easiest to do text mining on, since it includes exact institution names like “hospital” or “university”)</li>
+<li><strong>additional variables:</strong> <code>tipo</code> (UOC, SUOC, or UEP) and <code>institucion</code> (whether the buyer is an institution or not)</li>
+</ul></li>
+<li><p><code>entidad</code></p>
+<ul>
+<li>left join onto <code>unidad_contratacion</code> by <code>unidad_contratacion.entidad_codigo_sicp = entidad.codigo_sicp</code></li>
+<li><strong>NOTE:</strong> <code>entidad</code> has multiple rows for each value of <code>entidad.codigo_sicp</code> (one per year), so the left join must be performed using a reduced version of <code>entidad</code> with a single row for each value (see the code snippet below for implementation)</li>
+<li><strong>variable of interest:</strong> <code>nombre</code> (name of the buyer at a higher level; does not include specific institution names, only broad government and municipality information)</li>
+</ul></li>
+<li><p><code>nivel_entidad</code></p>
+<ul>
+<li>left join onto <code>entidad</code> by <code>(entidad.anio, entidad.nivel_entidad_codigo) = (nivel_entidad.anio, nivel_entidad.nivel_entidad_codigo)</code></li>
+<li><strong>variable of interest:</strong> <code>nombre</code> (very broad buyer levels within the public sector)</li>
+</ul></li>
+</ol>
+<p><strong>CONCLUSIONS:</strong> Combine <code>unidad_contratacion.nombre</code> and <code>entidad.nombre</code> into a single string to perform text mining on. Since <code>nivel_entidad.nombre</code> has relatively few categories with little text, it does not lend itself well to text mining. Instead, experiment with it as a categorical variable in its own right.</p>
+</div>
+<div id="buyer-add-info-to-tenders" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Adding Buyer Information to Tenders</h2>
+<p><strong>ISSUE:</strong> The buyer joining process must somehow be incorporated into the feature engineering script, but relational column inconsistencies (in terms of naming and number) and the bidirectional joining order would significantly increase the complexity of the config file.</p>
+<p><strong>IMPLEMENTED SOLUTION:</strong> Perform the buyer joining process in a separate script, which then gets sourced within the feature engineering script if buyer-related variables are listed as predictors in the config file.</p>
+</div>
+<div id="buyer-level" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> Buyer Levels</h2>
+<p>We fit an OLS regression model for <code>log_precio_unitario</code> (our target) against <code>nivel_entidad</code> to see how much variability this predictor accounts for by itself.</p>
+<table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<tbody>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+F(14,3282352)
+</td>
+<td style="text-align:right;">
+3566.7951
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+R²
+</td>
+<td style="text-align:right;">
+0.0150
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+Adj. R²
+</td>
+<td style="text-align:right;">
+0.0150
+</td>
+</tr>
+</tbody>
+</table>
+<table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+Est.
+</th>
+<th style="text-align:right;">
+S.E.
+</th>
+<th style="text-align:right;">
+t val.
+</th>
+<th style="text-align:right;">
+p
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+(Intercept)
+</td>
+<td style="text-align:right;">
+12.4913
+</td>
+<td style="text-align:right;">
+0.0184
+</td>
+<td style="text-align:right;">
+678.0445
+</td>
+<td style="text-align:right;">
+0.0000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+nivel_entidadcapacitacion dncp
+</td>
+<td style="text-align:right;">
+-4.4322
+</td>
+<td style="text-align:right;">
+1.9485
+</td>
+<td style="text-align:right;">
+-2.2747
+</td>
+<td style="text-align:right;">
+0.0229
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+nivel_entidadcontraloria general de la republica
+</td>
+<td style="text-align:right;">
+-1.0160
+</td>
+<td style="text-align:right;">
+0.0419
+</td>
+<td style="text-align:right;">
+-24.2320
+</td>
+<td style="text-align:right;">
+0.0000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+nivel_entidaddefensoria del pueblo
+</td>
+<td style="text-align:right;">
+-1.5444
+</td>
+<td style="text-align:right;">
+0.0648
+</td>
+<td style="text-align:right;">
+-23.8431
+</td>
+<td style="text-align:right;">
+0.0000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+nivel_entidadempresas mixtas
+</td>
+<td style="text-align:right;">
+0.3968
+</td>
+<td style="text-align:right;">
+0.0224
+</td>
+<td style="text-align:right;">
+17.6902
+</td>
+<td style="text-align:right;">
+0.0000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+nivel_entidadempresas publicas
+</td>
+<td style="text-align:right;">
+-0.3827
+</td>
+<td style="text-align:right;">
+0.0193
+</td>
+<td style="text-align:right;">
+-19.7782
+</td>
+<td style="text-align:right;">
+0.0000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+nivel_entidadentes autonomos y autarquicos
+</td>
+<td style="text-align:right;">
+-0.3336
+</td>
+<td style="text-align:right;">
+0.0195
+</td>
+<td style="text-align:right;">
+-17.0953
+</td>
+<td style="text-align:right;">
+0.0000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+nivel_entidadentidades financieras oficiales
+</td>
+<td style="text-align:right;">
+-0.3138
+</td>
+<td style="text-align:right;">
+0.0212
+</td>
+<td style="text-align:right;">
+-14.8353
+</td>
+<td style="text-align:right;">
+0.0000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+nivel_entidadentidades publicas de seguridad social
+</td>
+<td style="text-align:right;">
+-0.2579
+</td>
+<td style="text-align:right;">
+0.0202
+</td>
+<td style="text-align:right;">
+-12.7640
+</td>
+<td style="text-align:right;">
+0.0000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+nivel_entidadgobiernos departamentales
+</td>
+<td style="text-align:right;">
+-0.2731
+</td>
+<td style="text-align:right;">
+0.0193
+</td>
+<td style="text-align:right;">
+-14.1613
+</td>
+<td style="text-align:right;">
+0.0000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+nivel_entidadmunicipalidades
+</td>
+<td style="text-align:right;">
+-0.5206
+</td>
+<td style="text-align:right;">
+0.0188
+</td>
+<td style="text-align:right;">
+-27.6727
+</td>
+<td style="text-align:right;">
+0.0000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+nivel_entidadpoder ejecutivo
+</td>
+<td style="text-align:right;">
+-0.9751
+</td>
+<td style="text-align:right;">
+0.0186
+</td>
+<td style="text-align:right;">
+-52.4557
+</td>
+<td style="text-align:right;">
+0.0000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+nivel_entidadpoder judicial
+</td>
+<td style="text-align:right;">
+-0.4177
+</td>
+<td style="text-align:right;">
+0.0192
+</td>
+<td style="text-align:right;">
+-21.7252
+</td>
+<td style="text-align:right;">
+0.0000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+nivel_entidadpoder legislativo
+</td>
+<td style="text-align:right;">
+-0.3389
+</td>
+<td style="text-align:right;">
+0.0218
+</td>
+<td style="text-align:right;">
+-15.5240
+</td>
+<td style="text-align:right;">
+0.0000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+nivel_entidaduniversidades nacionales
+</td>
+<td style="text-align:right;">
+-1.1089
+</td>
+<td style="text-align:right;">
+0.0190
+</td>
+<td style="text-align:right;">
+-58.2084
+</td>
+<td style="text-align:right;">
+0.0000
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td style="padding: 0; " colspan="100%">
+<sup></sup> Standard errors: OLS
+</td>
+</tr>
+</tfoot>
+</table>
+<p>By itself, <code>nivel_entidad</code> accounts for a statistically significant 1.5% of the variability in <code>log_precio_unitario</code>, so we might consider including it in our model. But what about in conjunction with other predictors?</p>
+<p><strong>ISSUE:</strong> The <code>nivel_entidad</code> variable has 15 categories; we must find the best way to merge them.</p>
+</div>
+<div id="buyer-name-description" class="section level2" number="3.4">
+<h2><span class="header-section-number">3.4</span> Buyer Names and Descriptions</h2>
+<p>We join the name and description of a buyer into a single string for each tender and perform text mining.</p>
+</div>
+<div id="buyer-frequent-words" class="section level2" number="3.5">
+<h2><span class="header-section-number">3.5</span> Most Frequent Words</h2>
+<p>Below are the 30 most frequent words in the buyer descriptions, along with the proportion of items for which that buyer keyword appears:</p>
+<p><img src="resources/buyer/frequent-words.png" /></p>
+</div>
+<div id="buyer-groupings" class="section level2" number="3.6">
+<h2><span class="header-section-number">3.6</span> Final Buyer Groupings</h2>
+<p>Since there may be overlap between the keywords present in each buyer name and description, we will be treating the buyer groupings as indicator variables (to which a buyer either belongs or not) – mutually exclusive categories would not make sense here. Some potential indicator variable groupings are:</p>
+<ul>
+<li>Police: <code>"policia"</code></li>
+<li>Hospital: <code>"hospital"</code> or <code>"cancer"</code></li>
+<li>Science: <code>"ciencia"</code></li>
+<li>Health: <code>"salud"</code></li>
+<li>Law: <code>"justicia"</code> or <code>"judicial"</code></li>
+<li>Ministry: <code>"ministerio"</code></li>
+<li>Education: <code>"universidad"</code>, <code>"facultad"</code>, or <code>"educacion"</code></li>
+<li>Army: <code>"defensa"</code>, <code>"comando"</code>, <code>"armada"</code>, or <code>"ejercito"</code></li>
+<li>Bank: <code>"banco"</code></li>
+<li>Tech: <code>"tecnologia"</code> or <code>"aeronautica"</code></li>
+<li>Electricity: <code>"ande"</code> (administracion nacional de electricidad) or <code>"electricidad"</code></li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Grouping</th>
+<th align="left">String Pattern</th>
+<th align="left">Proportion</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">police</td>
+<td align="left">policia</td>
+<td align="left">3.15%</td>
+</tr>
+<tr class="even">
+<td align="left">hospital</td>
+<td align="left">hospital|cancer</td>
+<td align="left">1.60%</td>
+</tr>
+<tr class="odd">
+<td align="left">science</td>
+<td align="left">ciencia</td>
+<td align="left">5.82%</td>
+</tr>
+<tr class="even">
+<td align="left">health</td>
+<td align="left">salud</td>
+<td align="left">8.95%</td>
+</tr>
+<tr class="odd">
+<td align="left">law</td>
+<td align="left">justicia|judicial</td>
+<td align="left">7.11%</td>
+</tr>
+<tr class="even">
+<td align="left">ministry</td>
+<td align="left">ministerio</td>
+<td align="left">34.52%</td>
+</tr>
+<tr class="odd">
+<td align="left">education</td>
+<td align="left">universidad|facultad|educacion</td>
+<td align="left">10.95%</td>
+</tr>
+<tr class="even">
+<td align="left">army</td>
+<td align="left">defensa|comando|armada|ejercito</td>
+<td align="left">10.01%</td>
+</tr>
+<tr class="odd">
+<td align="left">bank</td>
+<td align="left">banco</td>
+<td align="left">1.94%</td>
+</tr>
+<tr class="even">
+<td align="left">tech</td>
+<td align="left">tecnologia|aeronautica</td>
+<td align="left">3.39%</td>
+</tr>
+<tr class="odd">
+<td align="left">electricity</td>
+<td align="left">ande|electricidad</td>
+<td align="left">2.49%</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="buyer-variable-importance" class="section level2" number="3.7">
+<h2><span class="header-section-number">3.7</span> Variable Importance Exploration</h2>
+<p>Finally, we explore the importance of the above groupings when it comes to explaining the variability in <code>log_precio_unitario</code>. To find out which indicators might be worth keeping in the baseline regression model, we perform variable selection using the best subsets method. The importance of the different indicators might change once we include other variables, but this is a good first look at what might be most important.</p>
+<div class="smaller">
+
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+10 Vars
+</th>
+<th style="text-align:left;">
+9 Vars
+</th>
+<th style="text-align:left;">
+8 Vars
+</th>
+<th style="text-align:left;">
+7 Vars
+</th>
+<th style="text-align:left;">
+6 Vars
+</th>
+<th style="text-align:left;">
+5 Vars
+</th>
+<th style="text-align:left;">
+4 Vars
+</th>
+<th style="text-align:left;">
+3 Vars
+</th>
+<th style="text-align:left;">
+2 Vars
+</th>
+<th style="text-align:left;">
+1 Vars
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Adjr2
+</td>
+<td style="text-align:left;">
+0.0246
+</td>
+<td style="text-align:left;">
+0.0246
+</td>
+<td style="text-align:left;">
+0.0244
+</td>
+<td style="text-align:left;">
+0.0242
+</td>
+<td style="text-align:left;">
+0.0236
+</td>
+<td style="text-align:left;">
+0.0229
+</td>
+<td style="text-align:left;">
+0.0220
+</td>
+<td style="text-align:left;">
+0.0199
+</td>
+<td style="text-align:left;">
+0.0157
+</td>
+<td style="text-align:left;">
+0.0112
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cp
+</td>
+<td style="text-align:left;">
+183.53
+</td>
+<td style="text-align:left;">
+366.21
+</td>
+<td style="text-align:left;">
+828.40
+</td>
+<td style="text-align:left;">
+1574.61
+</td>
+<td style="text-align:left;">
+3689.67
+</td>
+<td style="text-align:left;">
+5891.46
+</td>
+<td style="text-align:left;">
+8936.16
+</td>
+<td style="text-align:left;">
+16108.72
+</td>
+<td style="text-align:left;">
+30183.28
+</td>
+<td style="text-align:left;">
+45445.77
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Bic
+</td>
+<td style="text-align:left;">
+-81.63k
+</td>
+<td style="text-align:left;">
+-81.46k
+</td>
+<td style="text-align:left;">
+-81.01k
+</td>
+<td style="text-align:left;">
+-80.28k
+</td>
+<td style="text-align:left;">
+-78.18k
+</td>
+<td style="text-align:left;">
+-75.99k
+</td>
+<td style="text-align:left;">
+-72.97k
+</td>
+<td style="text-align:left;">
+-65.84k
+</td>
+<td style="text-align:left;">
+-51.87k
+</td>
+<td style="text-align:left;">
+-36.8k
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Police
+</td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Hospital
+</td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Science
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Health
+</td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Law
+</td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ministry
+</td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Education
+</td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Army
+</td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Bank
+</td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Tech
+</td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Electricity
+</td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+</tbody>
+</table></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="buyer-conclusions" class="section level2" number="3.8">
+<h2><span class="header-section-number">3.8</span> Implementation Conclusions</h2>
+<p>A total of 11 buyer indicator variables (listed <a href="buyer.html#buyer-groupings">above</a>) were created based on the cleaned-up and merged buyer descriptions. Each indicator variable corresponds to certain specific string patterns, and the variable will be <em>TRUE</em> for a particular observation if that observation’s clean buyer description matches those patterns. Otherwise, the indicator variable will be <em>FALSE</em>.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="fe.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="context.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "lunr",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

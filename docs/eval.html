@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>9 Model Evaluation | DNCP Project Documentation</title>
+  <meta name="description" content="This is the documentation for the DNCP Project of the Summer 2021 DSSGx Fellowship at the University of Warwick and LMU." />
+  <meta name="generator" content="bookdown 0.23 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="9 Model Evaluation | DNCP Project Documentation" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is the documentation for the DNCP Project of the Summer 2021 DSSGx Fellowship at the University of Warwick and LMU." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="9 Model Evaluation | DNCP Project Documentation" />
+  
+  <meta name="twitter:description" content="This is the documentation for the DNCP Project of the Summer 2021 DSSGx Fellowship at the University of Warwick and LMU." />
+  
+
+
+
+<meta name="date" content="2021-08-25" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="predict.html"/>
+<link rel="next" href="conclusions.html"/>
+<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">DNCP Documentation</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="fe.html"><a href="fe.html"><i class="fa fa-check"></i><b>2</b> Feature Engineering</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="fe.html"><a href="fe.html#fe-script"><i class="fa fa-check"></i><b>2.1</b> The Script</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="fe.html"><a href="fe.html#fe-script-required-files"><i class="fa fa-check"></i><b>2.1.1</b> Required Files</a></li>
+<li class="chapter" data-level="2.1.2" data-path="fe.html"><a href="fe.html#fe-script-required-r-packages"><i class="fa fa-check"></i><b>2.1.2</b> Required R Packages</a></li>
+<li class="chapter" data-level="2.1.3" data-path="fe.html"><a href="fe.html#fe-script-tasks-performed"><i class="fa fa-check"></i><b>2.1.3</b> Tasks Performed</a></li>
+<li class="chapter" data-level="2.1.4" data-path="fe.html"><a href="fe.html#fe-script-outputs"><i class="fa fa-check"></i><b>2.1.4</b> Outputs</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="fe.html"><a href="fe.html#fe-conf"><i class="fa fa-check"></i><b>2.2</b> The Configuration File</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="fe.html"><a href="fe.html#fe-conf-data-load"><i class="fa fa-check"></i><b>2.2.1</b> Loading in Data</a></li>
+<li class="chapter" data-level="2.2.2" data-path="fe.html"><a href="fe.html#features"><i class="fa fa-check"></i><b>2.2.2</b> Features</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="buyer.html"><a href="buyer.html"><i class="fa fa-check"></i><b>3</b> Buyer Groupings</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="buyer.html"><a href="buyer.html#buyer-information-fields"><i class="fa fa-check"></i><b>3.1</b> Buyer Information Fields</a></li>
+<li class="chapter" data-level="3.2" data-path="buyer.html"><a href="buyer.html#buyer-add-info-to-tenders"><i class="fa fa-check"></i><b>3.2</b> Adding Buyer Information to Tenders</a></li>
+<li class="chapter" data-level="3.3" data-path="buyer.html"><a href="buyer.html#buyer-level"><i class="fa fa-check"></i><b>3.3</b> Buyer Levels</a></li>
+<li class="chapter" data-level="3.4" data-path="buyer.html"><a href="buyer.html#buyer-name-description"><i class="fa fa-check"></i><b>3.4</b> Buyer Names and Descriptions</a></li>
+<li class="chapter" data-level="3.5" data-path="buyer.html"><a href="buyer.html#buyer-frequent-words"><i class="fa fa-check"></i><b>3.5</b> Most Frequent Words</a></li>
+<li class="chapter" data-level="3.6" data-path="buyer.html"><a href="buyer.html#buyer-groupings"><i class="fa fa-check"></i><b>3.6</b> Final Buyer Groupings</a></li>
+<li class="chapter" data-level="3.7" data-path="buyer.html"><a href="buyer.html#buyer-variable-importance"><i class="fa fa-check"></i><b>3.7</b> Variable Importance Exploration</a></li>
+<li class="chapter" data-level="3.8" data-path="buyer.html"><a href="buyer.html#buyer-conclusions"><i class="fa fa-check"></i><b>3.8</b> Implementation Conclusions</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="context.html"><a href="context.html"><i class="fa fa-check"></i><b>4</b> Context Groupings</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="context.html"><a href="context.html#context-information-fields"><i class="fa fa-check"></i><b>4.1</b> Context Information Fields</a></li>
+<li class="chapter" data-level="4.2" data-path="context.html"><a href="context.html#context-frequent-words"><i class="fa fa-check"></i><b>4.2</b> Most Frequent Words</a></li>
+<li class="chapter" data-level="4.3" data-path="context.html"><a href="context.html#context-word-assoc"><i class="fa fa-check"></i><b>4.3</b> Most Frequent Word Associations</a></li>
+<li class="chapter" data-level="4.4" data-path="context.html"><a href="context.html#context-word-regression"><i class="fa fa-check"></i><b>4.4</b> Most Influential Words</a></li>
+<li class="chapter" data-level="4.5" data-path="context.html"><a href="context.html#context-groupings"><i class="fa fa-check"></i><b>4.5</b> Final Context Groupings</a></li>
+<li class="chapter" data-level="4.6" data-path="context.html"><a href="context.html#context-conclusions"><i class="fa fa-check"></i><b>4.6</b> Implementation Conclusions</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="outlier.html"><a href="outlier.html"><i class="fa fa-check"></i><b>5</b> Outlier Removal</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="outlier.html"><a href="outlier.html#outlier-anomaly-scores"><i class="fa fa-check"></i><b>5.1</b> Anomaly Scores</a></li>
+<li class="chapter" data-level="5.2" data-path="outlier.html"><a href="outlier.html#outlier-statistics"><i class="fa fa-check"></i><b>5.2</b> Outlier Statistics</a></li>
+<li class="chapter" data-level="5.3" data-path="outlier.html"><a href="outlier.html#outlier-descriptions"><i class="fa fa-check"></i><b>5.3</b> Outlier Descriptions</a></li>
+<li class="chapter" data-level="5.4" data-path="outlier.html"><a href="outlier.html#outlier-conclusions"><i class="fa fa-check"></i><b>5.4</b> Implementation Conclusions</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="eda.html"><a href="eda.html"><i class="fa fa-check"></i><b>6</b> Exploratory Data Analysis</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="eda.html"><a href="eda.html#eda-pdf"><i class="fa fa-check"></i><b>6.1</b> The PDF File</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="eda.html"><a href="eda.html#eda-pdf-types"><i class="fa fa-check"></i><b>6.1.1</b> Types of EDA Performed</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="eda.html"><a href="eda.html#eda-data-dictionary"><i class="fa fa-check"></i><b>6.2</b> The Data Dictionary</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="train.html"><a href="train.html"><i class="fa fa-check"></i><b>7</b> Training</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="train.html"><a href="train.html#train-script"><i class="fa fa-check"></i><b>7.1</b> The Script</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="train.html"><a href="train.html#train-script-files"><i class="fa fa-check"></i><b>7.1.1</b> Required Files</a></li>
+<li class="chapter" data-level="7.1.2" data-path="train.html"><a href="train.html#train-script-required-r-packages"><i class="fa fa-check"></i><b>7.1.2</b> Required R Packages</a></li>
+<li class="chapter" data-level="7.1.3" data-path="train.html"><a href="train.html#train-script-tasks"><i class="fa fa-check"></i><b>7.1.3</b> Tasks Performed by the Script</a></li>
+<li class="chapter" data-level="7.1.4" data-path="train.html"><a href="train.html#train-conf-outputs"><i class="fa fa-check"></i><b>7.1.4</b> Outputs</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="train.html"><a href="train.html#train-conf"><i class="fa fa-check"></i><b>7.2</b> The Configuration File</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="train.html"><a href="train.html#train-conf-data"><i class="fa fa-check"></i><b>7.2.1</b> Data</a></li>
+<li class="chapter" data-level="7.2.2" data-path="train.html"><a href="train.html#train-conf-model"><i class="fa fa-check"></i><b>7.2.2</b> Model</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="predict.html"><a href="predict.html"><i class="fa fa-check"></i><b>8</b> Application &amp; Prediction</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="predict.html"><a href="predict.html#predict-script"><i class="fa fa-check"></i><b>8.1</b> The Script</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="predict.html"><a href="predict.html#predict-script-required-files"><i class="fa fa-check"></i><b>8.1.1</b> Required Files</a></li>
+<li class="chapter" data-level="8.1.2" data-path="predict.html"><a href="predict.html#predict-script-required-r-packages"><i class="fa fa-check"></i><b>8.1.2</b> Required R Packages</a></li>
+<li class="chapter" data-level="8.1.3" data-path="predict.html"><a href="predict.html#predict-script-tasks"><i class="fa fa-check"></i><b>8.1.3</b> Tasks Performed in the Script</a></li>
+<li class="chapter" data-level="8.1.4" data-path="predict.html"><a href="predict.html#predict-script-fe"><i class="fa fa-check"></i><b>8.1.4</b> Feature Engineering on New Data</a></li>
+<li class="chapter" data-level="8.1.5" data-path="predict.html"><a href="predict.html#predict-script-make-predictions"><i class="fa fa-check"></i><b>8.1.5</b> Making Predictions on New Data</a></li>
+<li class="chapter" data-level="8.1.6" data-path="predict.html"><a href="predict.html#predict-script-outputs"><i class="fa fa-check"></i><b>8.1.6</b> Outputs</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="predict.html"><a href="predict.html#predict-conf"><i class="fa fa-check"></i><b>8.2</b> The Configuration File</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="predict.html"><a href="predict.html#predict-conf-data"><i class="fa fa-check"></i><b>8.2.1</b> Data</a></li>
+<li class="chapter" data-level="8.2.2" data-path="predict.html"><a href="predict.html#predict-conf-features"><i class="fa fa-check"></i><b>8.2.2</b> Features</a></li>
+<li class="chapter" data-level="8.2.3" data-path="predict.html"><a href="predict.html#predict-conf-model"><i class="fa fa-check"></i><b>8.2.3</b> Model</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="eval.html"><a href="eval.html"><i class="fa fa-check"></i><b>9</b> Model Evaluation</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="eval.html"><a href="eval.html#eval-metrics"><i class="fa fa-check"></i><b>9.1</b> Evaluation Metrics</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="eval.html"><a href="eval.html#eval-rmse"><i class="fa fa-check"></i><b>9.1.1</b> RMSE</a></li>
+<li class="chapter" data-level="9.1.2" data-path="eval.html"><a href="eval.html#eval-range"><i class="fa fa-check"></i><b>9.1.2</b> Range</a></li>
+<li class="chapter" data-level="9.1.3" data-path="eval.html"><a href="eval.html#eval-rsq"><i class="fa fa-check"></i><b>9.1.3</b> <span class="math inline">\(R^2\)</span></a></li>
+<li class="chapter" data-level="9.1.4" data-path="eval.html"><a href="eval.html#eval-mae"><i class="fa fa-check"></i><b>9.1.4</b> MAE</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="eval.html"><a href="eval.html#eval-important-features"><i class="fa fa-check"></i><b>9.2</b> Most Important Features</a></li>
+<li class="chapter" data-level="9.3" data-path="eval.html"><a href="eval.html#eval-models"><i class="fa fa-check"></i><b>9.3</b> Models Used</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="eval.html"><a href="eval.html#eval-ols"><i class="fa fa-check"></i><b>9.3.1</b> Linear Regression</a></li>
+<li class="chapter" data-level="9.3.2" data-path="eval.html"><a href="eval.html#eval-rf"><i class="fa fa-check"></i><b>9.3.2</b> Random Forest</a></li>
+<li class="chapter" data-level="9.3.3" data-path="eval.html"><a href="eval.html#eval-xgb"><i class="fa fa-check"></i><b>9.3.3</b> XGBoost</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="eval.html"><a href="eval.html#eval-top-10"><i class="fa fa-check"></i><b>9.4</b> Top 10 Most Important Features</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="eval.html"><a href="eval.html#eval-top-10-goods"><i class="fa fa-check"></i><b>9.4.1</b> Goods-Only Dataset</a></li>
+<li class="chapter" data-level="9.4.2" data-path="eval.html"><a href="eval.html#eval-top-10-services"><i class="fa fa-check"></i><b>9.4.2</b> Services-Only Dataset</a></li>
+<li class="chapter" data-level="9.4.3" data-path="eval.html"><a href="eval.html#eval-top-10-combined"><i class="fa fa-check"></i><b>9.4.3</b> Combined Dataset</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="conclusions.html"><a href="conclusions.html"><i class="fa fa-check"></i><b>10</b> Conclusions</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="conclusions.html"><a href="conclusions.html#outcomes"><i class="fa fa-check"></i><b>10.1</b> Outcomes</a></li>
+<li class="chapter" data-level="10.2" data-path="conclusions.html"><a href="conclusions.html#limitations"><i class="fa fa-check"></i><b>10.2</b> Limitations</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">DNCP Project Documentation</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="eval" class="section level1" number="9">
+<h1><span class="header-section-number">9</span> Model Evaluation</h1>
+<div id="eval-metrics" class="section level2" number="9.1">
+<h2><span class="header-section-number">9.1</span> Evaluation Metrics</h2>
+<p>For this project, several evaluation criteria were used to understand model performances.</p>
+<div id="eval-rmse" class="section level3" number="9.1.1">
+<h3><span class="header-section-number">9.1.1</span> RMSE</h3>
+<p>The root mean square error (RMSE) was used to understand the general deviance that model predictions had from their actual values. The RMSE gives an estimate of the error in guarani or USD for each item prediction. Typically, the mean is used as the basis for calculating this error; however, this caused outliers to significantly impact the RMSE values, and so the median was used as the center instead in most RMSE calculations for this project.</p>
+</div>
+<div id="eval-range" class="section level3" number="9.1.2">
+<h3><span class="header-section-number">9.1.2</span> Range</h3>
+<p>The range of the prediction is the difference between the maximum and minimum value in the predicted values. The range helps to understand the dispersion between models.</p>
+</div>
+<div id="eval-rsq" class="section level3" number="9.1.3">
+<h3><span class="header-section-number">9.1.3</span> <span class="math inline">\(R^2\)</span></h3>
+<p>R-squared (<span class="math inline">\(R^2\)</span> is a statistical measure that represents the proportion of the variance of a dependent variable that is explained by the independent variables in a model predicting it. Using this metric, it became clear that more complex models such as XGBoost and random forests performed better with regards to <span class="math inline">\(R^2\)</span>.</p>
+</div>
+<div id="eval-mae" class="section level3" number="9.1.4">
+<h3><span class="header-section-number">9.1.4</span> MAE</h3>
+<p>Mean absolute error (MAE) is a measure of errors between paired observations, calculated as the mean of the absolute values of the differences between predicted and actual values by models. It is usually similar in magnitude to RMSE, but slightly smaller, as can be seen from the results of winning model</p>
+</div>
+</div>
+<div id="eval-important-features" class="section level2" number="9.2">
+<h2><span class="header-section-number">9.2</span> Most Important Features</h2>
+<p>Further evaluation methods were to look at the most important features from each model, as shown through the code below.</p>
+</div>
+<div id="eval-models" class="section level2" number="9.3">
+<h2><span class="header-section-number">9.3</span> Models Used</h2>
+<div id="eval-ols" class="section level3" number="9.3.1">
+<h3><span class="header-section-number">9.3.1</span> Linear Regression</h3>
+<p>linear regression was used to have baseline KPIs setup for the model to fit the data, as it is a linear approach to modeling the relationship between a scalar response (or dependent variable) and one or more explanatory variables (or independent variables). In linear regression, the relationships are modeled using linear predictor functions whose unknown model parameters are estimated from the data.</p>
+<p>Linear regression was the first type of regression analysis to be performed rigorously. This is because models which depend linearly on their unknown parameters are easier to fit than models which are non-linearly related to their parameters and because the statistical properties of the resulting estimators are easier to determine.</p>
+<p>The quantitative results of the linear regression model can be seen below.</p>
+<p>KPI results from the goods dataset:</p>
+<pre><code>RMSE: 0.89274
+MAE: 0.68324
+R Squared: 0.35687
+Non-Log RMSE: 24489313.70398 PYG (3673.39706 USD) 
+Non-Log Median RMSE: 58995.87842 PYG (8.84938 USD)  </code></pre>
+<p>KPI results from the services dataset:</p>
+<pre><code>RMSE: 1.05749
+MAE: 0.8429
+R Squared: 0.17311
+Non-Log RMSE: 56371120.49851 PYG (8455.66807 USD) 
+Non-Log Median RMSE: 350812.10185 PYG (52.62182 USD) </code></pre>
+<p>KPI results from the combined dataset (both goods and services):</p>
+<pre><code>RMSE: 0.99793
+MAE: 0.77541
+R Squared: 0.32015
+Non-Log RMSE: 64734360.72949 PYG (9710.15411 USD) 
+Non-Log Median RMSE: 201014.94886 PYG (30.15224 USD)   </code></pre>
+</div>
+<div id="eval-rf" class="section level3" number="9.3.2">
+<h3><span class="header-section-number">9.3.2</span> Random Forest</h3>
+<p>Random forest is an ensemble machine learning method in the case of regression, which is mainly implemented by building a great number of decision trees during the training time and
+outputting the averaging forest’s prediction of the individual trees. The random forest in <code>mlr3</code> can be tuned with several tuning parameters: number of trees to grow tree <code>n</code>, number of variables at each random split selection <code>mtry</code>, and so on.</p>
+<p>The quantitative results of the random forest model can be seen below.</p>
+<p>KPI results from the goods dataset:</p>
+<pre><code>RMSE: 0.53668
+MAE:0.39888
+R Squared: 0.76758
+Non-Log RMSE: 21077688.3875 PYG (3161.65326 USD) 
+Non-Log Median RMSE: 29468.16874 PYG (4.42023 USD) </code></pre>
+<p>KPI results from the services dataset:</p>
+<pre><code>RMSE: 0.55089
+MAE: 0.41274
+R Squared: 0.7756
+Non-Log RMSE: 47733933.54249 PYG (7160.09003 USD) 
+Non-Log Median RMSE: 188064.15382 PYG (28.20962 USD)</code></pre>
+</div>
+<div id="eval-xgb" class="section level3" number="9.3.3">
+<h3><span class="header-section-number">9.3.3</span> XGBoost</h3>
+<p>XGBoost is a decision-tree-based ensemble Machine Learning algorithm that uses a gradient boosting framework. when it comes to small-to-medium structured/tabular data, decision tree based algorithms are considered best-in-class right now.</p>
+<p>KPI results from the combined dataset (both goods and services) using the XGBoost model:</p>
+<pre><code>RMSE: 0.48002
+MAE:0.3523
+R Squared: 0.8427
+Non-Log RMSE: 51125287.18182 PYG (7668.79308 USD) 
+Non-Log Median RMSE: 55966.30043 PYG (8.39495 USD) </code></pre>
+<p>KPI results from the services dataset using the XGBoost model:</p>
+<pre><code>RMSE: 0.48415
+MAE:0.35441
+R Squared: 0.82668
+Non-Log RMSE: 42147072.80922 PYG (6322.06092 USD) 
+Non-Log Median RMSE: 153284.64994 PYG (22.9927 USD) </code></pre>
+<p>KPI results from the goods dataset using the XGBoost model:</p>
+<pre><code>RMSE: 0.47235
+MAE:0.34788
+R Squared: 0.81996
+Non-Log RMSE: 19324456.90415 PYG (2898.66854 USD) 
+Non-Log Median RMSE: 24234.82391 PYG (3.63522 USD) </code></pre>
+</div>
+</div>
+<div id="eval-top-10" class="section level2" number="9.4">
+<h2><span class="header-section-number">9.4</span> Top 10 Most Important Features</h2>
+<p>There are two different standards to compute the influence on the model from different variables. One is computed from permuting the out-of-bag data, and another one is computed from the total decrease in node impurities. Thus, we are able to focus on less but more important variables when there are a great number of variables in the data set.</p>
+<p>A benefit of using ensembles methods like gradient boosting and random forests is that they can automatically provide estimates of feature importance from a trained predictive model.</p>
+<div id="eval-top-10-goods" class="section level3" number="9.4.1">
+<h3><span class="header-section-number">9.4.1</span> Goods-Only Dataset</h3>
+<p><img src="resources/evaluation/goods_importance.png" /></p>
+<p>As can be seen from the bar plot above, item <code>cantidad</code> plays an important role in predicting the prices, and following variables related to information technology, broadcasting telecommunication, furniture, office context, army buyer, private vehicles, and <code>forma_adjudicacion</code> have also an impact in prediction.</p>
+</div>
+<div id="eval-top-10-services" class="section level3" number="9.4.2">
+<h3><span class="header-section-number">9.4.2</span> Services-Only Dataset</h3>
+<p><img src="resources/evaluation/services_importance.png" /></p>
+<p>From the bar plot above, item <code>cantidad</code> plays an important role in predicting the prices, and following variables related to fine art and graphic services, building construction and maintenance, administrative and transportation services, <code>forma_adjudicacion</code> and <code>institucion</code> have also an impact on predictions.</p>
+</div>
+<div id="eval-top-10-combined" class="section level3" number="9.4.3">
+<h3><span class="header-section-number">9.4.3</span> Combined Dataset</h3>
+<p><img src="resources/evaluation/combined_importance.png" /></p>
+<p>As can be seen from the bar plot above, item <code>cantidad</code> plays an important role in predicting the prices, and variables related to building and construction services, hardware context, furniture, office context and construction context are calso onsidered important for prediction.</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="predict.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="conclusions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "lunr",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
