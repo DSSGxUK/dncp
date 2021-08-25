@@ -1,4 +1,6 @@
 introduction
+motivation
+objectives-final-product
 fe
 fe-script
 fe-script-required-files
