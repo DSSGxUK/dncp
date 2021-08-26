@@ -4,8 +4,8 @@
 
 data:
     # loc: '../../data/raw/'
-    loc: "/files/data/" # loc is input path
-    dest: '~/dncp/data/output/' # dest is output path
+    loc: "~/data/raw/" # loc is input path
+    dest: '~/data/output/' # dest is output path
     input_data:
         # listed in order of joining
         item_solicitado: 'item_solicitado.csv'
@@ -89,10 +89,10 @@ features:
 
 fe:
     currency:
-        loc: "/files/data/"
+        loc: "~/dncp/data/raw/"
         file: "cotizacion.csv"
     inflation:
-        loc: "/files/data/"
+        loc: "~/dncp/data/raw/"
         file: "ipc.csv"
         base_year: 2021
         base_month: 6

@@ -45,8 +45,8 @@ features:
 # ------------------------------------------------------------------------------
 
 model:
-    loc: "data/output/" # loc is input path
-    winning_model: "xgboost_2021-08-13.rds" # loc is input path
+    loc: "~/data/output/" # loc is input path
+    winning_model: "model_inter.rds" # loc is input path
 ohe_model:
-    loc: "data/output/"
-    last_run_date: "2021-08-13"
+    loc: "~/data/output/models/"
+    last_run_date: "2021-08-25"
