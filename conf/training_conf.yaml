@@ -3,8 +3,8 @@
 # ------------------------------------------------------------------------------
 
 data:
-    loc: 'data/output/'
-    last_run_date: '2021-08-09'
+    loc: '~/data/output/models/'
+    last_run_date: '2021-08-25'
 
 # ------------------------------------------------------------------------------
 # FEATURES
@@ -71,7 +71,7 @@ model:
     name: 'lm_test'
     train_prop: 0.8
     # type can be e.g. 'regr.ranger' for random forest, 'regr.xgboost' for xgboost, etc.
-    type: 'regr.xgboost'
+    type: 'regr.lm'
     parameters:
         # for a given model type, use lrn(model_type)$param_set to find which
         # parameters can be customized, then input the ones you want to change

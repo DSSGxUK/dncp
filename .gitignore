@@ -10,3 +10,5 @@
 *.log
 *.tex
 *.~lock.*
+.Rproj.user
+packrat/lib*/
