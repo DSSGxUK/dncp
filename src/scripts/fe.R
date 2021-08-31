@@ -173,7 +173,7 @@ ohe_model <- paste("~ ", paste(cols_to_encode, collapse = " + ")) |>
 caret::dummyVars(data = training_set_factors)
 
 # save one-hot encoding model
-ohe_file <- paste0(fe_conf$data$dest, "models/one_hot_encoding_", Sys.Date(), ".rds")
+ohe_file <- paste0(fe_conf$data$dest, "one_hot_encoding_", Sys.Date(), ".rds")
 saveRDS(ohe_model, file = ohe_file)
 
 encoded_cols <- ohe_model |>
