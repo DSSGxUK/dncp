@@ -78,10 +78,10 @@ tuning_conf <- conf$model$hyperparameter_tuning
 tuned_parameter_list <- list()
 
 if (tuning_conf$run) {
-
+  
   parameters_to_tune <- tuning_conf$parameters
   parameters_to_tune_names <- names(parameters_to_tune)
-
+  
   search_space_raw <- purrr::map2(parameters_to_tune, parameters_to_tune_names, \(p, n) {
     paste0(
       n,
@@ -95,9 +95,9 @@ if (tuning_conf$run) {
     )
   }) |>
     paste(collapse = ", ")
-
+  
   search_space <- eval(parse(text = (paste0("ps(", search_space_raw, ")"))))
-
+  
   instance <- TuningInstanceSingleCrit$new(
     task = task,
     learner = learner,
@@ -106,13 +106,13 @@ if (tuning_conf$run) {
     search_space = search_space,
     terminator = trm("evals", n_evals = tuning_conf$n_evals)
   )
-
+  
   tuner <- tuning_conf$tuner
   tt <- tnr(tuner)
-
+  
   # modifies the instance by reference
   tt$optimize(instance)
-
+  
   # returns best configuration and best performance
   tuned_parameter_list <- instance$result_learner_param_vals[parameters_to_tune_names]
 }
@@ -185,3 +185,22 @@ if (str_detect(target, "_log$")) {
 message("Done logging metrics.\n")
 
 message("Training iteration finished.")
+
+# ------------------------------------------------------------------------------
+# Rendering Evaluation report
+# ------------------------------------------------------------------------------
+
+if(conf$Evaluation_report$run){
+  
+message("Rendering Evaluation...")
+
+today <- as.character(Sys.Date())
+
+rmarkdown::render(
+  input = "reports/Evaluation.Rmd",
+  output_file = paste0("Evaluation", today, ".pdf"),
+)
+
+message("Done Rendering...")
+
+}
