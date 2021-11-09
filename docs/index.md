@@ -4,7 +4,7 @@ author: |
   | **Fellows:** Beck DeYoung, Maria-Cristiana Girjau, Dushant Gohri, Ethan Lee
   | **Techical Mentor:** Robert Hager
   | **Project Manager:** Daniel Townsend
-date: "25 August 2021"
+date: "09 November 2021"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
